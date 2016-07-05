@@ -1,11 +1,9 @@
-require 'victor'
-require 'byebug'
-
 module RSVP
   class Plot
     attr_accessor :data, :aspect_ratio
 
     def save(name)
+      svg.rect x: 0, y: 0, width: width, height: height, fill: '#ccc'
       build # should be implemented by subclass
       svg.save name
     end
@@ -40,31 +38,4 @@ module RSVP
       @svg ||= SVG.new viewBox: "0 0 #{width} #{height}", style: { background: '#ddd' }
     end
   end
-
-  class LinePlot < Plot
-    def build
-      svg.rect x: 0, y: 0, width: width, height: height, fill: '#ccc'
-      svg.polyline fill: :none, stroke: :black, stroke_width: 2, points: points
-    end
-
-    def points
-      result = []
-      inverted_points.each do |point|
-        x = width*point[0]
-        y = height*point[1]
-        result << "#{x},#{y}"
-      end
-      result
-    end
-  end
 end
-
-include RSVP
-
-plot = LinePlot.new
-plot.aspect_ratio = 2
-plot.data = [10, 30, 20, 40, 30]
-# p plot.inverted_points
-plot.save 'line'
-
-
