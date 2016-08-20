@@ -10,3 +10,74 @@ version Minichart::VERSION
 RunfileTasks::RubyGems.all 'minichart'
 # RunfileTasks::Testing.rspec
 
+
+command "examples"
+
+usage 'watch [--dev]'
+help 'Watch example files and rerun them on change'
+option '--dev', 'Watch the dev folder instead of the examples folder'
+action :watch do |args|
+  folder = args['--dev'] ? 'dev' : 'examples'
+  glob = "#{folder}/*.rb"
+  
+  say_status :watch, glob
+
+  FileWatcher.new(glob).watch do |filename, event|
+    say_status event, filename
+    next if event == :delete
+
+    Dir.chdir folder do
+      filename = File.basename filename
+      run "ruby #{filename}"
+    end
+  end
+end
+
+help 'Regenerate all SVG examples'
+action :build do
+  say_status :invoke, :build
+  File.delete *Dir['examples/*.svg']
+  Dir.chdir 'examples' do
+    Dir['*.rb'].each do |filename|
+      run "ruby #{filename}"
+    end
+  end
+  say_status :done, :build
+  
+end
+
+help "Generate readme for examples folder"
+action :readme do
+  say_status :invoke, 'examples'
+
+  result = ["# Examples\n"]
+  Dir['examples/*.rb'].each do |file|
+    say_status :process, file
+
+
+    basename = File.basename file, '.rb'
+    title = basename.tr '_', ' '
+    code  = File.read(file).strip
+    if File.exist? "examples/#{basename}.svg"
+      image = "[![#{basename}](https://cdn.rawgit.com/DannyBen/minichart/master/examples/#{basename}.svg)](https://github.com/DannyBen/minichart/blob/master/#{file})"
+    else
+      image = false
+    end
+
+    result.push "## #{title}\n"
+    result.push "```ruby"
+    result.push code
+    result.push "```\n"
+    result.push image if image
+    result.push "\n"
+  end
+
+  result.push "\n---\n"
+  result.push "This file was generated automatically with `run examples readme`."
+
+  result = result.join "\n"
+  File.write 'examples/README.md', result
+  say_status :write, 'examples/README.md'
+end
+
+endcommand

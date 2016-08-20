@@ -1,6 +1,10 @@
 module Minichart
   class Chart
-    attr_accessor :data, :aspect_ratio
+    attr_accessor :data, :aspect_ratio, :opts
+
+    def initialize(opts={})
+      @opts = opts
+    end
 
     def save(name)
       svg.rect x: 0, y: 0, width: width, height: height, fill: '#ccc'
@@ -9,7 +13,7 @@ module Minichart
     end
 
     def build
-      raise "Subeclass needs to implement #build"
+      raise "#build should be implemented by subclass."
     end
 
     def inverted_points(opts={})
@@ -41,7 +45,15 @@ module Minichart
     end
 
     def svg
-      @svg ||= SVG.new viewBox: "0 0 #{width} #{height}", style: { background: '#ddd' }
+      @svg ||= SVG.new viewBox: "0 0 #{width} #{height}", style: style
+    end
+
+    def style
+      @opts[:style] ||= style!
+    end
+
+    def style!
+      { background: @opts[:background] || '#eee' }
     end
   end
 end
