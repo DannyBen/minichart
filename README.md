@@ -34,4 +34,7 @@ plot.data = [10, 30, 20, 40, 30]
 plot.save 'line'
 ```
 
-See more examples in the examples folder.
+See more examples in the [examples folder][1].
+
+
+[1]: https://github.com/DannyBen/minichart/tree/master/examples#examples
