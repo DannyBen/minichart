@@ -1,0 +1,12 @@
+require "runfile-tasks"
+require 'filewatcher'
+
+require_relative 'lib/rsvp'
+
+name    "RSVP Developer Toolbelt"
+summary "Runfile tasks for building the RSVP gem"
+version Victor::VERSION
+
+RunfileTasks::RubyGems.all 'victor'
+# RunfileTasks::Testing.rspec
+

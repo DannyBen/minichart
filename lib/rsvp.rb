@@ -1,4 +1,4 @@
 require 'victor'
-require_relative 'rsvp/plot'
-require_relative 'rsvp/line_plot'
-require_relative 'rsvp/bar_plot'
+require 'rsvp/plot'
+require 'rsvp/line_plot'
+require 'rsvp/bar_plot'
