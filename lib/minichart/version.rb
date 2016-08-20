@@ -1,3 +1,3 @@
-module RSVP
+module Minichart
   VERSION = "0.0.1"
 end

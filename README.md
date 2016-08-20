@@ -1,10 +1,10 @@
-RSVP - Ruby Scalable Vector Plot (SVG Mini Charts)
+Minichart - SVG Chart Generator
 ==================================================
 
 
 ---
 
-Work in progress
+Create SVG mini charts with Ruby
 
 ---
 
@@ -12,21 +12,26 @@ Install
 --------------------------------------------------
 
 ```
-$ gem install rsvp
+$ gem install minichart
 ```
 
 Or with bundler:
 
 ```ruby
-gem 'victor'
+gem 'minichart'
 ```
 
-Examples
+Example
 --------------------------------------------------
 
-Soon
+```ruby
+require 'minichart'
+include Minichart
 
-Usage
---------------------------------------------------
+plot = LineChart.new
+plot.aspect_ratio = 2
+plot.data = [10, 30, 20, 40, 30]
+plot.save 'line'
+```
 
-Soon
+See more examples in the examples folder.

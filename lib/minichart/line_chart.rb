@@ -1,5 +1,5 @@
-module RSVP
-  class LinePlot < Plot
+module Minichart
+  class LineChart < Chart
     def build
       svg.polyline fill: :none, stroke: :black, stroke_width: 2, points: points
     end

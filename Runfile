@@ -1,12 +1,12 @@
 require "runfile-tasks"
 require 'filewatcher'
 
-require_relative 'lib/rsvp'
+require_relative 'lib/minichart'
 
-name    "RSVP Developer Toolbelt"
-summary "Runfile tasks for building the RSVP gem"
-version Victor::VERSION
+name    "Minichart Developer Toolbelt"
+summary "Runfile tasks for building the Minichart gem"
+version Minichart::VERSION
 
-RunfileTasks::RubyGems.all 'victor'
+RunfileTasks::RubyGems.all 'minichart'
 # RunfileTasks::Testing.rspec
 

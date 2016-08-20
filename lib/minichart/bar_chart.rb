@@ -1,5 +1,5 @@
-module RSVP
-  class BarPlot < Plot
+module Minichart
+  class BarChart < Chart
     def build
       opts  = { x_point_count: data.size }
 

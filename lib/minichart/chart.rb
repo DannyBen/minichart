@@ -1,5 +1,5 @@
-module RSVP
-  class Plot
+module Minichart
+  class Chart
     attr_accessor :data, :aspect_ratio
 
     def save(name)
