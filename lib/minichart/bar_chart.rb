@@ -8,11 +8,7 @@ module Minichart
       end
     end
 
-    private
-
-    def style
-      @style ||= { stroke_width: 1, stroke: '#eee' }
-    end
+  private
 
     def bar_width
       @bar_width ||= width / data.size
@@ -23,10 +19,10 @@ module Minichart
       bar_height = height-y
       { 
         x: x*width, 
-        y: y, width: 
-        bar_width, height: 
-        bar_height, 
-        style: style 
+        y: y, 
+        width: bar_width, 
+        height: bar_height, 
+        style: { fill: color, stroke_width: stroke, stroke: background }
       }
     end
   end

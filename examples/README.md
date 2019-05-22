@@ -45,6 +45,35 @@ plot.save '03_larger_data'
 [![03_larger_data](https://cdn.rawgit.com/DannyBen/minichart/master/examples/03_larger_data.svg)](https://github.com/DannyBen/minichart/blob/master/examples/03_larger_data.rb)
 
 
+## 04 line color
+
+```ruby
+require 'minichart'
+include Minichart
+
+plot = LineChart.new background: '#fda', color: 'blue'
+plot.aspect_ratio = 3
+plot.data = [10, 30, 20, 40, 30]
+plot.save '04_line_color'
+```
+
+[![04_line_color](https://cdn.rawgit.com/DannyBen/minichart/master/examples/04_line_color.svg)](https://github.com/DannyBen/minichart/blob/master/examples/04_line_color.rb)
+
+
+## 05 bar color
+
+```ruby
+require 'minichart'
+include Minichart
+
+plot = BarChart.new background: '#fda', color: 'blue'
+plot.aspect_ratio = 3
+plot.data = [10, 30, 20, 40, 30]
+plot.save '06_bar_color'
+```
+
+
+
 
 ---
 
