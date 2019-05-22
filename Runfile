@@ -10,7 +10,6 @@ version Minichart::VERSION
 RunfileTasks::RubyGems.all 'minichart'
 # RunfileTasks::Testing.rspec
 
-
 command "examples"
 
 usage 'watch [--dev]'
