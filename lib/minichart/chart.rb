@@ -7,13 +7,13 @@ module Minichart
     end
 
     def save(name)
-      svg.rect x: 0, y: 0, width: width, height: height, fill: '#ccc'
+      svg.rect x: 0, y: 0, width: width, height: height, fill: background
       build
       svg.save name
     end
 
     def build
-      raise "#build should be implemented by subclass."
+      raise NotImplementedError, "#build is not implemented"
     end
 
     def inverted_points(opts={})
@@ -45,15 +45,23 @@ module Minichart
     end
 
     def svg
-      @svg ||= SVG.new viewBox: "0 0 #{width} #{height}", style: style
+      @svg ||= Victor::SVG.new viewBox: "0 0 #{width} #{height}", style: style
     end
 
     def style
-      @opts[:style] ||= style!
+      @opts[:style] ||= {}
     end
 
-    def style!
-      { background: @opts[:background] || '#eee' }
+    def background
+      @opts[:background] ||= '#eee'
+    end
+
+    def color
+      @opts[:color] || '#333'
+    end
+
+    def stroke
+      @opts[:stroke] ||= 2
     end
   end
 end

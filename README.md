@@ -1,7 +1,6 @@
 Minichart - SVG Chart Generator
 ==================================================
 
-
 ---
 
 Create SVG mini charts with Ruby
