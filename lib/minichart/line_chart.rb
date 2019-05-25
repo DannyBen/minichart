@@ -1,7 +1,11 @@
 module Minichart
   class LineChart < Chart
     def build
-      svg.polyline fill: :none, stroke: color, stroke_width: stroke, points: points
+      svg.polyline fill: :none,
+        stroke: color,
+        stroke_width: stroke,
+        stroke_linejoin: :round,
+        points: points
     end
 
   private
