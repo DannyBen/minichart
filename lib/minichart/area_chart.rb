@@ -1,7 +1,7 @@
 module Minichart
-  class LineChart < Chart
+  class AreaChart < Chart
     def build
-      svg.polyline fill: :none,
+      svg.polyline fill: color,
         stroke: color,
         stroke_width: stroke,
         stroke_linejoin: :round,
@@ -11,12 +11,16 @@ module Minichart
   protected
 
     def points
-      result = []
+      result = ["0,#{height}"]
+
       inverted_points.each do |point|
         x = width*point[0]
         y = height*point[1]
         result << "#{x},#{y}"
       end
+
+      result << "#{width},#{height}"
+
       result
     end
   end

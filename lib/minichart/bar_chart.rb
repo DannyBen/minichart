@@ -8,7 +8,7 @@ module Minichart
       end
     end
 
-  private
+  protected
 
     def bar_width
       @bar_width ||= width / data.size
