@@ -4,12 +4,19 @@ module Minichart
 
     def initialize(opts={})
       @opts = opts
+      @aspect_ratio = 3
     end
 
     def save(name)
       svg.rect x: 0, y: 0, width: width, height: height, fill: background
       build
       svg.save name
+    end
+
+    def render
+      svg.rect x: 0, y: 0, width: width, height: height, fill: background
+      build
+      svg.to_s
     end
 
     def build
@@ -36,16 +43,8 @@ module Minichart
       result
     end
 
-    def width
-      @width ||= (aspect_ratio * height).round
-    end
-
     def height
       100
-    end
-
-    def svg
-      @svg ||= Victor::SVG.new viewBox: "0 0 #{width} #{height}", style: style
     end
 
     def style
@@ -62,6 +61,14 @@ module Minichart
 
     def stroke
       @opts[:stroke] ||= 2
+    end
+
+    def width
+      @width ||= (aspect_ratio * height).round
+    end
+
+    def svg
+      @svg ||= Victor::SVG.new viewBox: "0 0 #{width} #{height}", style: style
     end
   end
 end
