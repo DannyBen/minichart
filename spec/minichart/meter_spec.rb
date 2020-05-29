@@ -9,9 +9,9 @@ describe Meter do
     expect { subject }.to raise_error(NotImplementedError)
   end
 
-  describe VerticalBarMeter do
+  describe HorizontalBarMeter do
     it "works" do
-      expect(subject.render).to match_approval 'vertical_bar_meter.svg'
+      expect(subject.render).to match_approval 'horizontal_bar_meter.svg'
     end
 
     context "with inverse: true" do
@@ -19,7 +19,7 @@ describe Meter do
       let(:options) { default_options.merge inverse: true }
 
       it "works" do
-        expect(subject.render).to match_approval 'vertical_bar_meter_inverse.svg'
+        expect(subject.render).to match_approval 'horizontal_bar_meter_inverse.svg'
       end
     end
   end

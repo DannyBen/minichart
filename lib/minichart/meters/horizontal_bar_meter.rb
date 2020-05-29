@@ -1,5 +1,5 @@
 module Minichart
-  class VerticalBarMeter < Meter
+  class HorizontalBarMeter < Meter
     def build
       if inverse?
         rect x: width - bar_width, y: 0, height: height, width: bar_width, style: style
