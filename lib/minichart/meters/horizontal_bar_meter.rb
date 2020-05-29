@@ -3,9 +3,25 @@ module Minichart
     def build
       draw_bar
       draw_zero_line if zero_line
+      draw_clipping_indicator if clipping_indicator and clipping?
     end
 
   protected
+
+    def draw_clipping_indicator
+      x = if mode == :positive or (mode == :dual and value > 0)
+        width - clipping_indicator_size
+      else
+        0
+      end
+
+      element :rect, x: x, y: 0,
+        height: height, width: clipping_indicator_size,
+        fill: clipping_indicator_color
+        # ,
+        # stroke_width: stroke, stroke: background
+
+    end
 
     def draw_bar
       x = if mode == :negative
@@ -22,26 +38,34 @@ module Minichart
 
     def draw_zero_line
       x = if mode == :negative
-        width-zero_line_stroke
+        width - zero_line_size
       elsif mode == :dual
-        width / 2 - zero_line_stroke / 2
+        width / 2 - zero_line_size / 2
       else
         0
       end
 
       element :rect, x: x, y: 0,
-        height: height, width: zero_line_stroke,
+        height: height, width: zero_line_size,
         fill: zero_line_color
 
     end
 
+    def clipping?
+      value > max || value < -max
+    end
+
     def mode
+      @mode ||= mode!
+    end
+
+    def mode!
       opts[:mode] ||= :auto
 
       if opts[:mode] == :auto
         value >= 0 ? :positive : :negative
       else
-        opts[:mode]
+        opts[:mode].to_sym
       end
     end
 
@@ -53,12 +77,24 @@ module Minichart
       opts[:zero_line]
     end
 
-    def zero_line_stroke
-      opts[:zero_line_stroke] || 6
+    def zero_line_size
+      opts[:zero_line_size] ||= 6
     end
 
     def zero_line_color
-      opts[:zero_line_color] || 'black'
+      opts[:zero_line_color] ||= 'black'
+    end
+
+    def clipping_indicator
+      opts[:clipping_indicator]
+    end
+
+    def clipping_indicator_size
+      opts[:clipping_indicator_size] ||= 6
+    end
+
+    def clipping_indicator_color
+      opts[:clipping_indicator_color] ||= 'yellow'
     end
 
     def width_factor
