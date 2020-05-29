@@ -132,13 +132,16 @@ chart = LineChart.new data, options
 
 Meter charts support these options in additon to the basic options:
 
-| Option             | Default   | Description                                                  |
-| ------------------ | --------- | ------------------------------------------------------------ |
-| `mode`             | `:auto`   | Display mode.<br />Can be `:positive`, `:negative`, `:auto` or `:dual` |
-| `max`              | `100`     | The absolute maximum value.<br />This number should be positive even for nengative charts |
-| `zero_line`        | `false`   | If true, mark the zero line                                  |
-| `zero_line_stroke` | `4`       | Width of the zero line                                       |
-| `zero_line_color`  | `"black"` | Color of the zero line                                       |
+| Option                     | Default   | Description                                                  |
+| -------------------------- | --------- | ------------------------------------------------------------ |
+| `mode`                     | `:auto`   | Display mode.<br />Can be `:positive`, `:negative`, `:auto` or `:dual` |
+| `max`                      | `100`     | The absolute maximum value.<br />This number should be positive even for nengative charts |
+| `zero_line`                | `false`   | If true, mark the zero line                                  |
+| `zero_line_size`           | `6`       | Size of the zero line                                        |
+| `zero_line_color`          | `"black"` | Color of the zero line                                       |
+| `clipping_indicator`       | `false`   | If true, show when the value exceeds the range               |
+| `clipping_indicator_size`  | `6`       | Size of the clipping indicator                               |
+| `clipping_indicator_color` | `"yelow"` | Color of the clipping indicator                              |
 
 ## Examples
 
