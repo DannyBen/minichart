@@ -8,11 +8,11 @@
 
 <rect x="0" y="0" width="1000" height="100" fill="#eee"/>
 <defs>
-<clipPath id="minichart-1313943">
+<clipPath id="minichart-1">
 <rect width="1000" height="100"/>
 </clipPath>
 </defs>
-<g clip-path="url(#minichart-1313943)">
+<g clip-path="url(#minichart-1)">
 <rect x="0.0" y="82.72266614695" width="9" height="17.277333853049996" style="fill:#333; stroke-width:2; stroke:#eee"/>
 <rect x="9.70873786407767" y="82.64470863379464" width="9" height="17.355291366205364" style="fill:#333; stroke-width:2; stroke:#eee"/>
 <rect x="19.41747572815534" y="92.17501461703375" width="9" height="7.824985382966247" style="fill:#333; stroke-width:2; stroke:#eee"/>

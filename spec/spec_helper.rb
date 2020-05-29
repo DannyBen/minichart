@@ -11,4 +11,5 @@ require_relative 'spec_mixin'
 
 RSpec.configure do |c|
   c.include SpecMixin
+  c.before { IDGenerator.reset }
 end

@@ -8,11 +8,11 @@
 
 <rect x="0" y="0" width="250" height="50" fill="#eee"/>
 <defs>
-<clipPath id="minichart-1313943">
+<clipPath id="minichart-1">
 <rect width="250" height="50"/>
 </clipPath>
 </defs>
-<g clip-path="url(#minichart-1313943)">
+<g clip-path="url(#minichart-1)">
 <polyline fill="none" stroke="green" stroke-width="2" stroke-linejoin="round" points="0.0,50.0 62.5,16.666666666666668 125.0,33.333333333333336 187.5,0.0 250.0,16.666666666666668"/>
 </g>
 
