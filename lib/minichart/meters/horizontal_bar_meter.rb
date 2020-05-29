@@ -18,8 +18,6 @@ module Minichart
       element :rect, x: x, y: 0,
         height: height, width: clipping_indicator_size,
         fill: clipping_indicator_color
-        # ,
-        # stroke_width: stroke, stroke: background
 
     end
 
