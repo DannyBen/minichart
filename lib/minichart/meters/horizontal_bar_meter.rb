@@ -1,37 +1,57 @@
 module Minichart
   class HorizontalBarMeter < Meter
     def build
-      if inverse?
-        rect x: width - bar_width, y: 0, height: height, width: bar_width, style: style
+      x = if mode == :negative
+        x = width - bar_width
+      elsif mode == :dual
+        middle = width * 0.5
+        x = value >= 0 ? middle : middle - bar_width
       else
-        rect x: 0, y: 0, height: height, width: bar_width, style: style
+        0
       end
+
+      draw_bar x
     end
 
   protected
 
-    def max_value
-      opts[:max_value] ||= (inverse? ? 0 : 100)
+    def draw_bar(x)
+      rect x: x, y: 0, height: height, width: bar_width, style: style
     end
 
-    def min_value
-      opts[:min_value] ||= (inverse? ? -100 : 0)
+    def mode
+      if opts[:mode] == :auto
+        value >= 0 ? :positive : :negative
+      else
+        opts[:mode] || :positive
+      end
     end
 
-    def inverse?
-      opts[:inverse]
+    def max
+      opts[:max] ||= 100
     end
 
     def width_factor
-      @width_factor ||= width / (inverse? ? min_value.abs.to_f : max_value.to_f )
+      width / max
     end
 
     def clamped_value
-      @clamped_value ||= value.clamp(min_value, max_value)
+      case mode
+      when :positive
+        value.clamp 0, max
+      when :negative
+        value.clamp -max, 0
+      when :dual
+        value.clamp -max, max
+      end
     end
 
     def bar_width
-      @bar_width ||= clamped_value.abs * width_factor
+      if mode == :dual
+        clamped_value.abs * width_factor * 0.5
+      else
+        clamped_value.abs * width_factor
+      end
     end
 
     def style
@@ -39,3 +59,5 @@ module Minichart
     end
   end
 end
+
+
