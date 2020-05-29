@@ -5,22 +5,43 @@ module Minichart
       :height, :stroke, :style, :width, :opts
 
     def initialize(data, opts = {})
-      @data = data
-      @opts = opts
-      @background = opts[:background]
-      @aspect_ratio = opts[:aspect_ratio] || 3
-      @height = opts[:height] || 100
-      @width = opts[:width] || (aspect_ratio * height).round
-      @stroke = opts[:stroke] || 2
-      @style = opts[:style] || {}
-      @color = opts[:color] || '#333'
-
-      super height: height, width: width, style: style, 
-        viewBox: "0 0 #{width} #{height}"
+      @data, @opts = data, opts
       
+      super height: height, width: width, style: style, viewBox: viewbox
       rect x: 0, y: 0, width: width, height: height, fill: background if background
-
       build
+    end
+
+    def background
+      opts[:background]
+    end
+
+    def aspect_ratio
+      opts[:aspect_ratio] ||= 3
+    end
+
+    def height
+      opts[:height] ||= 100
+    end
+
+    def width
+      opts[:width] ||= (aspect_ratio * height).round
+    end
+
+    def stroke
+      opts[:stroke] ||= 2
+    end
+
+    def style
+      opts[:style] ||= {}
+    end
+
+    def color
+      opts[:color] ||= '#333'
+    end
+
+    def viewbox
+      "0 0 #{width} #{height}"
     end
 
     def build
