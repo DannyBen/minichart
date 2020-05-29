@@ -80,3 +80,6 @@ action :readme do
 end
 
 endcommand
+
+
+require_relative 'debug.rb' if File.exist? 'debug.rb'

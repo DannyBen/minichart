@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Chart do
-  subject { described_class.new data, options }
-  let(:data) { [10, 30, 20, 40, 30] }
+describe Meter do
+  subject { described_class.new value, options }
+  let(:value) { 75 }
   let(:options) { default_options }
 
   it "raises NotImplementedError" do

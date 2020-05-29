@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="250" viewBox="0 0 250 70" height="100%" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<g transform="translate(0 0)">
+<rect x="0" y="0" width="250" height="20" fill="#9f9"/>
+<defs>
+<clipPath id="minichart-1">
+<rect width="250" height="20"/>
+</clipPath>
+</defs>
+<g clip-path="url(#minichart-1)">
+<rect x="0" y="0" height="20" width="175.0" style="fill:green; stroke-width:2; stroke:#9f9"/>
+</g>
+</g>
+<g transform="translate(0 25)">
+<rect x="0" y="0" width="250" height="20" fill="#f99"/>
+<defs>
+<clipPath id="minichart-2">
+<rect width="250" height="20"/>
+</clipPath>
+</defs>
+<g clip-path="url(#minichart-2)">
+<rect x="50.0" y="0" height="20" width="200.0" style="fill:red; stroke-width:2; stroke:#f99"/>
+</g>
+</g>
+<g transform="translate(0 50)">
+<rect x="0" y="0" width="250" height="20" fill="#99f"/>
+<defs>
+<clipPath id="minichart-3">
+<rect width="250" height="20"/>
+</clipPath>
+</defs>
+<g clip-path="url(#minichart-3)">
+<rect x="125.0" y="0" height="20" width="100.0" style="fill:blue; stroke-width:2; stroke:#99f"/>
+<rect x="122" y="0" height="20" width="6" fill="black"/>
+</g>
+</g>
+
+</svg>

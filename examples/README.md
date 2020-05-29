@@ -1,59 +1,44 @@
 # Examples
 
-## area
+## area chart
 
 ```ruby
 require 'minichart'
 include Minichart
 
 data = [10, 30, 20, 40, 30]
-plot = AreaChart.new data
-plot.save 'area'
+plot = AreaChart.new data, height: 50, background: '#eee', aspect_ratio: 5, color: 'green'
+plot.save 'area_chart'
 ```
 
-[![area](area.svg)](examples/area.rb.svg)
+[![area_chart](area_chart.svg)](examples/area_chart.rb.svg)
 
 
-## area color
+## bar chart
 
 ```ruby
 require 'minichart'
 include Minichart
 
 data = [10, 30, 20, 40, 30]
-plot = AreaChart.new data, background: '#fda', color: 'blue'
-plot.save 'area_color'
+plot = BarChart.new data, height: 50, background: '#eee', aspect_ratio: 5, color: 'green'
+plot.save 'bar_chart'
 ```
 
-[![area_color](area_color.svg)](examples/area_color.rb.svg)
+[![bar_chart](bar_chart.svg)](examples/bar_chart.rb.svg)
 
 
-## bar
+## horizontal bar meter
 
 ```ruby
 require 'minichart'
 include Minichart
 
-data = [10, 30, 20, 40, 30]
-plot = BarChart.new data, aspect_ratio: 3
-plot.save 'bar'
+plot = HorizontalBarMeter.new 70, height: 20, background: '#9f9', aspect_ratio: 12, color: 'green'
+plot.save 'horizontal_bar_meter'
 ```
 
-[![bar](bar.svg)](examples/bar.rb.svg)
-
-
-## bar color
-
-```ruby
-require 'minichart'
-include Minichart
-
-data = [10, 30, 20, 40, 30]
-plot = BarChart.new data, background: '#fda', color: 'blue'
-plot.save 'bar_color'
-```
-
-[![bar_color](bar_color.svg)](examples/bar_color.rb.svg)
+[![horizontal_bar_meter](horizontal_bar_meter.svg)](examples/horizontal_bar_meter.rb.svg)
 
 
 ## larger data
@@ -70,32 +55,18 @@ plot.save 'larger_data'
 [![larger_data](larger_data.svg)](examples/larger_data.rb.svg)
 
 
-## line
+## line chart
 
 ```ruby
 require 'minichart'
 include Minichart
 
 data = [10, 30, 20, 40, 30]
-plot = LineChart.new data
-plot.save 'line'
+plot = LineChart.new data, height: 50, background: '#eee', aspect_ratio: 5, color: 'green'
+plot.save 'line_chart'
 ```
 
-[![line](line.svg)](examples/line.rb.svg)
-
-
-## line color
-
-```ruby
-require 'minichart'
-include Minichart
-
-data = [10, 30, 20, 40, 30]
-plot = LineChart.new data, background: '#fda', color: 'blue'
-plot.save 'line_color'
-```
-
-[![line_color](line_color.svg)](examples/line_color.rb.svg)
+[![line_chart](line_chart.svg)](examples/line_chart.rb.svg)
 
 
 ## multiple
@@ -128,6 +99,36 @@ svg.save 'multiple'
 ```
 
 [![multiple](multiple.svg)](examples/multiple.rb.svg)
+
+
+## multiple horizontal bars
+
+```ruby
+require 'minichart'
+include Minichart
+include Victor
+
+positive = HorizontalBarMeter.new 70,
+  height: 20, width: 250, background: '#9f9', color: 'green'
+
+negative = HorizontalBarMeter.new -80,
+  height: 20, width: 250, background: '#f99', color: 'red'
+
+dual = HorizontalBarMeter.new 80,
+  height: 20, width: 250, background: '#99f', color: 'blue',
+  mode: :dual, zero_line: true
+
+svg = SVG.new width: 250, viewBox: "0 0 250 70"
+svg.build do
+  g(transform: "translate(0 0)")  { append positive }
+  g(transform: "translate(0 25)") { append negative }
+  g(transform: "translate(0 50)") { append dual }
+end
+
+svg.save 'multiple_horizontal_bars'
+```
+
+[![multiple_horizontal_bars](multiple_horizontal_bars.svg)](examples/multiple_horizontal_bars.rb.svg)
 
 
 
