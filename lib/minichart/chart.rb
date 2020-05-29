@@ -1,20 +1,31 @@
 module Minichart
-  class Chart
-    attr_accessor :data, :aspect_ratio, :opts
+  class Chart < Victor::SVG
+    attr_reader :aspect_ratio, :background, :color, :data,
+      :height, :stroke, :style, :width
 
-    def initialize(opts={})
-      @opts = opts
-    end
+    def initialize(data, opts = {})
+      @data = data
+      @background = opts[:background]
+      @aspect_ratio = opts[:aspect_ratio] || 3
+      @height = opts[:height] || 100
+      @width = opts[:width] || (aspect_ratio * height).round
+      @stroke = opts[:stroke] || 2
+      @style = opts[:style] || {}
+      @color = opts[:color] || '#333'
 
-    def save(name)
-      svg.rect x: 0, y: 0, width: width, height: height, fill: background
+      super height: height, width: width, style: style, 
+        viewBox: "0 0 #{width} #{height}"
+      
+      rect x: 0, y: 0, width: width, height: height, fill: background if background
+
       build
-      svg.save name
     end
 
     def build
       raise NotImplementedError, "#build is not implemented"
     end
+
+  protected
 
     def inverted_points(opts={})
       normalized_points(opts).map { |point| [point[0], 1-point[1]] }
@@ -34,34 +45,6 @@ module Minichart
       end
 
       result
-    end
-
-    def width
-      @width ||= (aspect_ratio * height).round
-    end
-
-    def height
-      100
-    end
-
-    def svg
-      @svg ||= Victor::SVG.new viewBox: "0 0 #{width} #{height}", style: style
-    end
-
-    def style
-      @opts[:style] ||= {}
-    end
-
-    def background
-      @opts[:background] ||= '#eee'
-    end
-
-    def color
-      @opts[:color] || '#333'
-    end
-
-    def stroke
-      @opts[:stroke] ||= 2
     end
   end
 end

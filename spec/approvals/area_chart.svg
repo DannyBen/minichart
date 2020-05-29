@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg height="150" width="600" style="additional:styling" viewBox="0 0 600 150" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<rect x="0" y="0" width="600" height="150" fill="#bc7"/>
+<polyline fill="purple" stroke="purple" stroke-width="3" stroke-linejoin="round" points="0,150 0.0,150.0 150.0,50.00000000000001 300.0,100.00000000000001 450.0,0.0 600.0,50.00000000000001 600,150"/>
+
+</svg>
