@@ -111,11 +111,13 @@ def random_data(size)
   Array.new(size) { |i| rand i..(i + i * 10) }
 end
 
-linechart = LineChart.new random_data(20), color: 'green'
-barchart = BarChart.new random_data(40), color: 'blue'
-areachart = AreaChart.new random_data(20), color: 'red'
+options = { height: 60, width: 300, background: '#ccd' }
 
-svg = SVG.new viewBox: "0 0 920 100"
+linechart = LineChart.new random_data(20), options.merge({ color: 'green' })
+barchart  = BarChart.new  random_data(40), options.merge({ color: 'blue' })
+areachart = AreaChart.new random_data(20), options.merge({ color: 'red' })
+
+svg = SVG.new viewBox: "0 0 920 60"
 svg.build do
   g(transform: "translate(0 0)")  { append linechart }
   g(transform: "translate(310 0)") { append barchart }

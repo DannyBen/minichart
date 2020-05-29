@@ -14,7 +14,7 @@ linechart = LineChart.new random_data(20), options.merge({ color: 'green' })
 barchart  = BarChart.new  random_data(40), options.merge({ color: 'blue' })
 areachart = AreaChart.new random_data(20), options.merge({ color: 'red' })
 
-svg = SVG.new viewBox: "0 0 920 100"
+svg = SVG.new viewBox: "0 0 920 60"
 svg.build do
   g(transform: "translate(0 0)")  { append linechart }
   g(transform: "translate(310 0)") { append barchart }
