@@ -37,7 +37,7 @@
 </defs>
 <g clip-path="url(#minichart-3)">
 <rect x="125.0" y="0" height="20" width="100.0" style="fill:blue; stroke-width:2; stroke:#99f"/>
-<rect x="122" y="0" height="20" width="6" fill="black"/>
+<rect x="122" y="0" height="20" width="6" fill="black" stroke-width="0"/>
 </g>
 </g>
 

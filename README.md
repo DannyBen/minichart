@@ -107,6 +107,25 @@ dual = HorizontalBarMeter.new 80,
 
 Meter charts support [additional options](#meter-options).
 
+### Vertical Bar Meter
+
+<img src='examples/multiple_vertical_bars.svg' align='right'>
+
+```ruby
+positive = VerticalBarMeter.new 70,
+  width: 20, height: 250, background: '#9f9', color: 'green'
+
+negative = VerticalBarMeter.new -80,
+  width: 20, height: 250, background: '#f99', color: 'red'
+
+dual = VerticalBarMeter.new 80,
+  width: 20, height: 250, background: '#99f', color: 'blue',
+  mode: :dual, zero_line: true
+```
+
+Meter charts support [additional options](#meter-options).
+
+
 ## Options
 
 ### Basic Options
@@ -117,16 +136,17 @@ All chart classes support a second hash argument for options
 chart = LineChart.new data, options
 ```
 
-| Option         | Default                      | Description                                                  |
-| -------------- | ---------------------------- | ------------------------------------------------------------ |
-| `background`   | `"white"`                    | Chart background color                                       |
-| `color`        | `"#333"`                     | Chart color                                                  |
-| `aspect_ratio` | `3`                          | Set automatic width                                          |
-| `height`       | `100`                        | Chart height in pixels                                       |
-| `width`        | Calculated by `aspect_ratio` | Chart width in pixels                                        |
-| `stroke`       | `2`                          | Line stroke width.<br />In `BarChart` determines the gap between bars |
-| `style`        | *None*                       | Style hash for the SVG                                       |
+| Option         | Default                       | Description                                                  |
+| -------------- | ----------------------------- | ------------------------------------------------------------ |
+| `background`   | `"white"`                     | Chart background color                                       |
+| `color`        | `"#333"`                      | Chart color                                                  |
+| `aspect_ratio` | `3`                           | Set automatic width                                          |
+| `height`       | `100`<sup>*</sup>             | Chart height in pixels                                       |
+| `width`        | Calculated by `aspect_ratio`<sup>*</sup> | Chart width in pixels                                        |
+| `stroke`       | `2`                           | Line stroke width.<br />In `BarChart` determines the gap between bars |
+| `style`        | *None*                        | Style hash for the SVG                                       |
 
+_* Default dimensions are reversed for horizontal meters - `width` defaults to 100, and `height` is calculated automatically._
 
 ### Meter Options
 
