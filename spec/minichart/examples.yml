@@ -18,7 +18,7 @@ examples:
   area_chart:
     basic: *basic_chart
 
-  horizontal_bar_meter:
+  horizontal_bar_meter: &bar_meter
     basic: &basic_meter
       data: 75
       options:
@@ -70,3 +70,5 @@ examples:
         clipping_indicator: true
         mode: dual
 
+
+  vertical_bar_meter: *bar_meter
