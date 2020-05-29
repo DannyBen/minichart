@@ -13,8 +13,8 @@
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<rect x="0" y="0" height="25" width="60.0" style="fill:purple; stroke-width:3; stroke:#ddd"/>
-<rect x="0" y="0" height="25" width="6" fill="black"/>
+<rect x="50.0" y="0" height="25" width="37.5" style="fill:purple; stroke-width:3; stroke:#ddd"/>
+<rect x="47" y="0" height="25" width="6" fill="black"/>
 </g>
 
 </svg>

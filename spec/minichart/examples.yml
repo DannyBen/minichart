@@ -1,0 +1,72 @@
+default_options: &default_options
+  background: '#ddd'
+  aspect_ratio: 4
+  height: 25
+  stroke: 3
+  style: { additional: styling }
+  color: purple
+
+examples:
+  line_chart:
+    basic: &basic_chart
+      data: [10, 30, 20, 40, 30]
+      options: *default_options
+
+  bar_chart:
+    basic: *basic_chart
+
+  area_chart:
+    basic: *basic_chart
+
+  horizontal_bar_meter:
+    basic: &basic_meter
+      data: 75
+      options:
+        <<: *default_options
+        zero_line: true
+        clipping_indicator: true
+
+    negative:
+      <<: *basic_meter
+      data: -75
+
+    dual_negative:
+      data: -75
+      options:
+        <<: *default_options
+        mode: dual
+        zero_line: true
+
+    dual_positive:
+      data: 75
+      options:
+        <<: *default_options
+        mode: dual
+        zero_line: true
+
+    clipping_positive:
+      data: 120
+      options:
+        <<: *default_options
+        clipping_indicator: true
+
+    clipping_negative:
+      data: -120
+      options:
+        <<: *default_options
+        clipping_indicator: true
+
+    clipping_dual_positive:
+      data: 120
+      options:
+        <<: *default_options
+        clipping_indicator: true
+        mode: dual
+
+    clipping_dual_negative:
+      data: -120
+      options:
+        <<: *default_options
+        clipping_indicator: true
+        mode: dual
+
