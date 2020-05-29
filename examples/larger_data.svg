@@ -6,7 +6,7 @@
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
-<rect x="0" y="0" width="1000" height="100" fill="#eee"/>
+<rect x="0" y="0" width="1000" height="100" fill="#eee" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-1">
 <rect width="1000" height="100"/>

@@ -7,7 +7,7 @@
 
 
 <g transform="translate(0 0)">
-<rect x="0" y="0" width="300" height="60" fill="#ccd"/>
+<rect x="0" y="0" width="300" height="60" fill="#ccd" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-1">
 <rect width="300" height="60"/>
@@ -18,7 +18,7 @@
 </g>
 </g>
 <g transform="translate(310 0)">
-<rect x="0" y="0" width="300" height="60" fill="#ccd"/>
+<rect x="0" y="0" width="300" height="60" fill="#ccd" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-2">
 <rect width="300" height="60"/>
@@ -68,7 +68,7 @@
 </g>
 </g>
 <g transform="translate(620 0)">
-<rect x="0" y="0" width="300" height="60" fill="#ccd"/>
+<rect x="0" y="0" width="300" height="60" fill="#ccd" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-3">
 <rect width="300" height="60"/>

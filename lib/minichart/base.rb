@@ -9,7 +9,8 @@ module Minichart
       
       # super height: height, width: width, style: style, viewBox: viewbox
       super viewBox: viewbox, style: style
-      element :rect, x: 0, y: 0, width: width, height: height, fill: background
+      element :rect, x: 0, y: 0, width: width, height: height,
+        fill: background, stroke_width: 0
 
       clip_path_id = IDGenerator.next
       setup_clip_path clip_path_id
