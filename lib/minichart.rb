@@ -1,4 +1,5 @@
 require 'victor'
+require 'minichart/randomization'
 require 'minichart/base'
 require 'minichart/charts/chart'
 require 'minichart/charts/line_chart'

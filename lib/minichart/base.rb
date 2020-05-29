@@ -1,6 +1,8 @@
 module Minichart
   # Base class for all Minichart classes
-  class Base < Victor::SVG
+  class Base < Victor::SVGBase
+    include Randomization
+
     attr_reader :aspect_ratio, :background, :color, :data,
       :height, :stroke, :style, :width, :opts
 
@@ -8,12 +10,26 @@ module Minichart
       @data, @opts = data, opts
       
       super height: height, width: width, style: style, viewBox: viewbox
-      rect x: 0, y: 0, width: width, height: height, fill: background if background
-      build
+      element :rect, x: 0, y: 0, width: width, height: height, fill: background
+
+      clip_path_id = random_id
+      setup_clip_path clip_path_id
+
+      element :g, clip_path: "url(##{clip_path_id})" do
+        build
+      end      
+    end
+
+    def setup_clip_path(id)
+      element :defs do
+        element :clipPath, id: id do
+          element :rect, width: width, height: height
+        end
+      end
     end
 
     def background
-      opts[:background]
+      opts[:background] ||= 'white'
     end
 
     def aspect_ratio

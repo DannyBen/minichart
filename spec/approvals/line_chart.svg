@@ -6,7 +6,14 @@
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
-<rect x="0" y="0" width="100" height="25" fill="#bc7"/>
+<rect x="0" y="0" width="100" height="25" fill="#ddd"/>
+<defs>
+<clipPath id="minichart-1313943">
+<rect width="100" height="25"/>
+</clipPath>
+</defs>
+<g clip-path="url(#minichart-1313943)">
 <polyline fill="none" stroke="purple" stroke-width="3" stroke-linejoin="round" points="0.0,25.0 25.0,8.333333333333334 50.0,16.666666666666668 75.0,0.0 100.0,8.333333333333334"/>
+</g>
 
 </svg>
