@@ -1,7 +1,8 @@
+*.gem
+/.yardoc
 /coverage
+/debug.rb
 /dev
 /doc
-/gems
 /Gemfile.lock
-/.yardoc
-*.gem
+/gems
