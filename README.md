@@ -135,7 +135,7 @@ Meter charts support these options in additon to the basic options:
 | Option                     | Default   | Description                                                  |
 | -------------------------- | --------- | ------------------------------------------------------------ |
 | `mode`                     | `:auto`   | Display mode.<br />Can be `:positive`, `:negative`, `:auto` or `:dual` |
-| `max`                      | `100`     | The absolute maximum value.<br />This number should be positive even for nengative charts |
+| `max`                      | `100`     | The absolute maximum value.<br />This number should be positive even for negative charts |
 | `zero_line`                | `false`   | If true, mark the zero line                                  |
 | `zero_line_size`           | `6`       | Size of the zero line                                        |
 | `zero_line_color`          | `"black"` | Color of the zero line                                       |
