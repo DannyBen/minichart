@@ -64,7 +64,7 @@ The objects returned from all the mini chart classes are [Victor::SVG][2] object
 
 ### Line Chart
 
-<img src='examples/line_chart.svg' align='right'>
+<img src='examples/line_chart.svg' align='right' width=300>
 
 ```ruby
 LineChart.new data, height: 50, background: '#eee',
@@ -73,7 +73,7 @@ LineChart.new data, height: 50, background: '#eee',
 
 ### Bar Chart
 
-<img src='examples/bar_chart.svg' align='right'>
+<img src='examples/bar_chart.svg' align='right' width=300>
 
 ```ruby
 BarChart.new data, height: 50, background: '#eee',
@@ -82,7 +82,7 @@ BarChart.new data, height: 50, background: '#eee',
 
 ### Area Chart
 
-<img src='examples/area_chart.svg' align='right'>
+<img src='examples/area_chart.svg' align='right' width=300>
 
 ```ruby
 AreaChart.new data, height: 50, background: '#eee',
