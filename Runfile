@@ -8,7 +8,7 @@ summary "Runfile tasks for building the Minichart gem"
 version Minichart::VERSION
 
 RunfileTasks::RubyGems.all 'minichart'
-# RunfileTasks::Testing.rspec
+RunfileTasks::Testing.rspec
 
 command "examples"
 
@@ -58,7 +58,7 @@ action :readme do
     title = basename.tr '_', ' '
     code  = File.read(file).strip
     if File.exist? "examples/#{basename}.svg"
-      image = "[![#{basename}](https://cdn.rawgit.com/DannyBen/minichart/master/examples/#{basename}.svg)](https://github.com/DannyBen/minichart/blob/master/#{file})"
+      image = "[![#{basename}](#{basename}.svg)](#{file}.svg)"
     else
       image = false
     end

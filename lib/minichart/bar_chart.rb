@@ -4,7 +4,7 @@ module Minichart
       opts  = { x_point_count: data.size }
 
       inverted_points(opts).each do |x, y|
-        svg.rect bar_options x, y
+        rect bar_options x, y
       end
     end
 

@@ -1,7 +1,7 @@
 module Minichart
   class AreaChart < Chart
     def build
-      svg.polyline fill: color,
+      polyline fill: color,
         stroke: color,
         stroke_width: stroke,
         stroke_linejoin: :round,
