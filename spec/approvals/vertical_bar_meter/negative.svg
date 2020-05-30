@@ -14,8 +14,8 @@
 </defs>
 <g clip-path="url(#minichart-1)">
 <rect x="0" y="0.0" height="225.0" width="50" style="fill:purple; stroke-width:3; stroke:#ddd"/>
-<line x1="0" x2="50" y1="0.0" y2="0.0" stroke="black" stroke-width="6"/>
-<line x1="0" x2="50" y1="240.0" y2="240.0" stroke="black" stroke-width="6"/>
+<line x1="0" x2="50" y1="0.0" y2="0.0" stroke="black" stroke-width="10"/>
+<line x1="0" x2="50" y1="240.0" y2="240.0" stroke="black" stroke-width="10"/>
 </g>
 
 </svg>

@@ -31,10 +31,10 @@ module Minichart
         height: 50,
         max: 100,
         notches: [],
-        notch_thickness: 6,
+        notch_thickness: 10,
         notch_color: 'black',
         clipping_indicator: false,
-        clipping_indicator_thickness: 6,
+        clipping_indicator_thickness: 20,
         clipping_indicator_color: 'yellow',
       }
     end
