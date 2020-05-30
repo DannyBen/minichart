@@ -20,8 +20,10 @@ module Minichart
         {}
       end
 
-      def options
+      def options(update_hash = nil)
         @options ||= master_defaults.merge defaults
+        @options.merge! update_hash if update_hash
+        @options
       end
     end
 

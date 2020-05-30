@@ -8,6 +8,26 @@ Create SVG mini charts with Ruby
 
 ---
 
+* [Install](#install)
+* [Usage](#usage)
+* [Chart Types](#chart-types)
+  * [Line Chart](#line-chart)
+  * [Bar Chart](#bar-chart)
+  * [Area Chart](#area-chart)
+  * [Horizontal Bar Meter](#horizontal-bar-meter)
+  * [Vertical Bar Meter](#vertical-bar-meter)
+* [Configuration](#configuration)
+  * [Class-level default options](#class-level-default-options)
+  * [Instance initialization options](#instance-initialization-options)
+  * [Instance-level options](#instance-level-options)
+* [Options Reference](#options-reference)
+  * [Basic Options](#basic-options)
+  * [Meter Options](#meter-options)
+* [Examples](#examples)
+
+
+---
+
 ## Install
 
 ```shell
@@ -126,49 +146,125 @@ dual = VerticalBarMeter.new 80,
 Meter charts support [additional options](#meter-options).
 
 
-## Options
+## Configuration
+
+Chart options can be set in one of three ways.
+
+### Class-level default options
+
+See or set default options for any chart class by calling its `::options` method:
+
+```ruby
+# See all options
+p AreaChart.options
+#=> {:background=>"white", :height=>100, :width=>300, :stroke=>2, :style=>{}, :color=>"#66f"}
+
+# Set a single default option
+AreaChart.options[:color] = '#333'
+
+# Set multiple options at once
+AreaChart.options background: 'black', color: 'green'
+```
+
+### Instance initialization options
+
+Set options by providing a hash as the second argument on initialization:
+
+```ruby
+chart = AreaChart.new data, height: 120, width: 500
+```
+
+### Instance-level options
+
+After initialization, you can still update individual options:
+
+```ruby
+chart = AreaChart.new data
+chart.options[:background] = 'yellow'
+```
+
+## Options Reference
 
 ### Basic Options
 
-All chart classes support a second hash argument for options
+#### background
 
-```ruby
-chart = LineChart.new data, options
-```
+Chart background color.
 
-| Option         | Default                       | Description                                                  |
-| -------------- | ----------------------------- | ------------------------------------------------------------ |
-| `background`   | `"white"`                     | Chart background color                                       |
-| `color`        | `"#333"`                      | Chart color                                                  |
-| `aspect_ratio` | `3`                           | Set automatic width                                          |
-| `height`       | `100`<sup>*</sup>             | Chart height in pixels                                       |
-| `width`        | Calculated by `aspect_ratio`<sup>*</sup> | Chart width in pixels                                        |
-| `stroke`       | `2`                           | Line stroke width.<br />In `BarChart` determines the gap between bars |
-| `style`        | *None*                        | Style hash for the SVG                                       |
+#### color
 
-_* Default dimensions are reversed for horizontal meters - `width` defaults to 100, and `height` is calculated automatically._
+Chart color.
+
+#### height
+
+Chart height in pixels.
+
+#### width
+
+Chart width in pixels                                        |.
+
+#### stroke
+
+Line stroke width. This has a different effect in different chart types.
+
+#### style
+
+CSS Style hash to apply to the entire SVG.
+
 
 ### Meter Options
 
 Meter charts support these options in additon to the basic options:
 
-| Option                     | Default   | Description                                                  |
-| -------------------------- | --------- | ------------------------------------------------------------ |
-| `mode`                     | `:auto`   | Display mode.<br />Can be `:positive`, `:negative`, `:auto` or `:dual` |
-| `max`                      | `100`     | The absolute maximum value.<br />This number should be positive even for negative charts |
-| `zero_line`                | `false`   | If true, mark the zero line                                  |
-| `zero_line_size`           | `6`       | Size of the zero line                                        |
-| `zero_line_color`          | `"black"` | Color of the zero line                                       |
-| `clipping_indicator`       | `false`   | If true, show when the value exceeds the range               |
-| `clipping_indicator_size`  | `6`       | Size of the clipping indicator                               |
-| `clipping_indicator_color` | `"yelow"` | Color of the clipping indicator                              |
+
+#### mode
+
+Display mode. Can be `:positive`, `:negative`, `:dual` or `:auto` (default).
+
+The `:auto` mode will switch between `:positive` and `:negative` based on the
+value.
+
+#### max
+
+The absolute maximum value. This number should be positive even for negative
+charts.
+
+#### notches
+
+An array of one or more levels to place a notch marker. Use positive values
+only.
+
+#### notch_thickness
+
+Thickness of the notch markers.
+
+#### notch_color
+
+Color of the notch markers.
+
+#### clipping_indicator
+
+If true, show a marker when the value exceeds the range.
+
+#### clipping_indicator_thickness
+
+Thickness of the clipping indicator.
+
+#### clipping_indicator_color
+
+Color of the clipping indicator.
 
 ## Examples
 
 See more examples (code and SVG output) in the [examples folder][1].
 
----
+## Contributing / Support
 
+If you experience any issue, have a question or a suggestion, or if you wish
+to contribute, feel free to [open an issue][issues].
+
+---
 
 [1]: https://github.com/DannyBen/minichart/tree/master/examples#examples
 [2]: https://github.com/DannyBen/victor
+[issues]: https://github.com/DannyBen/minichart/issues

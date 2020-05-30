@@ -11,6 +11,18 @@ describe Base do
         expect(subject.options).to be_a Hash
         expect(subject.options).to eq subject.master_defaults
       end
+
+      context "with hash" do
+        before { @original_options = subject.options.dup }
+        after  { subject.options @original_options }
+
+        it "merges the hash with the existing options" do
+          subject.options background: 'platinum', width: 123
+          expect(subject.options[:background]).to eq "platinum"
+          expect(subject.options[:width]).to eq 123
+          expect(subject.options.keys).to eq [:background, :height, :width, :stroke, :style, :color]
+        end
+      end
     end
 
     describe '::options[]=' do
