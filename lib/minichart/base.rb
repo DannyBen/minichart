@@ -1,16 +1,16 @@
 module Minichart
   # Base class for all Minichart classes
   class Base < Victor::SVGBase
-    attr_reader :aspect_ratio, :background, :color, :data,
-      :height, :stroke, :style, :width, :opts
+    attr_reader :data, :options
 
-    def initialize(data, opts = {})
-      @data, @opts = data, opts
-      
-      # super height: height, width: width, style: style, viewBox: viewbox
-      super viewBox: viewbox, style: style
-      element :rect, x: 0, y: 0, width: width, height: height,
-        fill: background, stroke_width: 0
+    def initialize(data, user_options = {})
+      @data = data
+      @options = master_defaults.merge(defaults).merge(user_options)
+
+      super viewBox: viewbox, style: options[:style]
+      element :rect, x: 0, y: 0,
+        width: options[:width], height: options[:height],
+        fill: options[:background], stroke_width: 0
 
       clip_path_id = IDGenerator.next
       setup_clip_path clip_path_id
@@ -23,41 +23,29 @@ module Minichart
     def setup_clip_path(id)
       element :defs do
         element :clipPath, id: id do
-          element :rect, width: width, height: height
+          element :rect, width: options[:width], height: options[:height]
         end
       end
     end
 
-    def background
-      opts[:background] ||= 'white'
+    def master_defaults
+      {
+        background: 'white',
+        height: 100,
+        width: 300,
+        stroke: 2,
+        style: {},
+        color: '#66f'
+      }
     end
 
-    def aspect_ratio
-      opts[:aspect_ratio] ||= 3
-    end
-
-    def height
-      opts[:height] ||= 100
-    end
-
-    def width
-      opts[:width] ||= (aspect_ratio * height).round
-    end
-
-    def stroke
-      opts[:stroke] ||= 2
-    end
-
-    def style
-      opts[:style] ||= {}
-    end
-
-    def color
-      opts[:color] ||= '#333'
+    # For subclasses
+    def defaults
+      {}
     end
 
     def viewbox
-      "0 0 #{width} #{height}"
+      "0 0 #{options[:width]} #{options[:height]}"
     end
 
     def build

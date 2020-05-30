@@ -15,6 +15,7 @@
 </defs>
 <g clip-path="url(#minichart-1)">
 <rect x="0" y="75.0" height="175.0" width="20" style="fill:green; stroke-width:2; stroke:#9f9"/>
+<line x1="0" x2="20" y1="250.0" y2="250.0" stroke="black" stroke-width="6"/>
 </g>
 </g>
 <g transform="translate(25 0)">
@@ -25,7 +26,8 @@
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-2)">
-<rect x="0" y="0" height="200.0" width="20" style="fill:red; stroke-width:2; stroke:#f99"/>
+<rect x="0" y="0.0" height="200.0" width="20" style="fill:red; stroke-width:2; stroke:#f99"/>
+<line x1="0" x2="20" y1="0.0" y2="0.0" stroke="black" stroke-width="6"/>
 </g>
 </g>
 <g transform="translate(50 0)">
@@ -37,7 +39,7 @@
 </defs>
 <g clip-path="url(#minichart-3)">
 <rect x="0" y="25.0" height="100.0" width="20" style="fill:blue; stroke-width:2; stroke:#99f"/>
-<rect x="0" y="122" height="6" width="20" fill="black" stroke-width="0"/>
+<line x1="0" x2="20" y1="125.0" y2="125.0" stroke="black" stroke-width="6"/>
 </g>
 </g>
 

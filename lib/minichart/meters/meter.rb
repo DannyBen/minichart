@@ -9,7 +9,7 @@ module Minichart
     end
 
     def clipping?
-      value > max || value < -max
+      value > options[:max] || value < -options[:max]
     end
 
     def mode
@@ -17,56 +17,45 @@ module Minichart
     end
 
     def mode!
-      opts[:mode] ||= :auto
+      options[:mode] ||= :auto
 
-      if opts[:mode] == :auto
+      if options[:mode] == :auto
         value >= 0 ? :positive : :negative
       else
-        opts[:mode].to_sym
+        options[:mode].to_sym
       end
     end
 
-    def max
-      opts[:max] ||= 100
-    end
-
-    def notches
-      opts[:notches]
-    end
-
-    def notch_thickness
-      opts[:notch_thickness] ||= 6
-    end
-
-    def notch_color
-      opts[:notch_color] ||= 'black'
-    end
-
-    def clipping_indicator
-      opts[:clipping_indicator]
-    end
-
-    def clipping_indicator_thickness
-      opts[:clipping_indicator_thickness] ||= 6
-    end
-
-    def clipping_indicator_color
-      opts[:clipping_indicator_color] ||= 'yellow'
+    def meter_defaults
+      {
+        height: 50,
+        max: 100,
+        notches: [],
+        notch_thickness: 6,
+        notch_color: 'black',
+        clipping_indicator: false,
+        clipping_indicator_thickness: 6,
+        clipping_indicator_color: 'yellow',
+      }
     end
 
     def clamped_value
       case mode
       when :positive
-        value.clamp 0, max
+        value.clamp 0, options[:max]
       when :negative
-        value.clamp -max, 0
+        value.clamp -options[:max], 0
       when :dual
-        value.clamp -max, max
+        value.clamp -options[:max], options[:max]
       end
     end
 
     def style
-      { fill: color, stroke_width: stroke, stroke: background }
+      {
+        fill: options[:color],
+        stroke_width: options[:stroke],
+        stroke: options[:background]
+      }
     end
 
   end

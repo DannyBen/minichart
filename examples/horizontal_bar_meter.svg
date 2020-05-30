@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg viewBox="0 0 240 20" style="fill:green; stroke-width:2; stroke:#9f9" width="100%" height="100%" 
+<svg viewBox="0 0 240 20" style="" width="100%" height="100%" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -13,7 +13,7 @@
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<rect x="0" y="0" height="20" width="168.0" style="fill:green; stroke-width:2; stroke:#9f9"/>
+<rect x="0.0" y="0" height="20" width="168.0" style=""/>
 </g>
 
 </svg>

@@ -1,7 +1,7 @@
 default_options: &default_options
   background: '#ddd'
-  aspect_ratio: 4
   height: 25
+  width: 100
   stroke: 3
   style: { additional: styling }
   color: purple
