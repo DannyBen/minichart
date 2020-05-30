@@ -23,7 +23,7 @@ examples:
       data: 75
       options:
         <<: *default_options
-        zero_line: true
+        notches: [0, 50]
         clipping_indicator: true
 
     negative:
@@ -35,14 +35,14 @@ examples:
       options:
         <<: *default_options
         mode: dual
-        zero_line: true
+        notches: [0, 50]
 
     dual_positive:
       data: 75
       options:
         <<: *default_options
         mode: dual
-        zero_line: true
+        notches: [0, 50]
 
     clipping_positive:
       data: 120
@@ -69,6 +69,5 @@ examples:
         <<: *default_options
         clipping_indicator: true
         mode: dual
-
 
   vertical_bar_meter: *bar_meter

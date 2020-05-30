@@ -30,24 +30,24 @@ module Minichart
       opts[:max] ||= 100
     end
 
-    def zero_line
-      opts[:zero_line]
+    def notches
+      opts[:notches]
     end
 
-    def zero_line_size
-      opts[:zero_line_size] ||= 6
+    def notch_thickness
+      opts[:notch_thickness] ||= 6
     end
 
-    def zero_line_color
-      opts[:zero_line_color] ||= 'black'
+    def notch_color
+      opts[:notch_color] ||= 'black'
     end
 
     def clipping_indicator
       opts[:clipping_indicator]
     end
 
-    def clipping_indicator_size
-      opts[:clipping_indicator_size] ||= 6
+    def clipping_indicator_thickness
+      opts[:clipping_indicator_thickness] ||= 6
     end
 
     def clipping_indicator_color
