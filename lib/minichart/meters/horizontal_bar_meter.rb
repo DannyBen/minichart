@@ -1,5 +1,11 @@
 module Minichart
   class HorizontalBarMeter < Meter
+    class << self
+      def defaults
+        meter_defaults.merge width: 300, height: 50
+      end
+    end
+
     def build
       draw_bar
       draw_notches if options[:notches]
@@ -7,10 +13,6 @@ module Minichart
     end
 
   protected
-
-    def defaults
-      meter_defaults.merge width: 300, height: 50
-    end
 
     def draw_bar
       x1 = x_for 0

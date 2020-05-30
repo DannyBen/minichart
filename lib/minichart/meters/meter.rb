@@ -2,6 +2,22 @@ module Minichart
   # Base class for charts with a single value
   class Meter < Base
 
+    class << self
+      def meter_defaults
+        @meter_defaults ||= {
+          height: 50,
+          max: 100,
+          notches: [],
+          notch_thickness: 10,
+          notch_color: 'black',
+          clipping_indicator: false,
+          clipping_indicator_thickness: 20,
+          clipping_indicator_color: 'yellow',
+        }
+      end
+    end
+
+
   protected 
 
     def value
@@ -24,19 +40,6 @@ module Minichart
       else
         options[:mode].to_sym
       end
-    end
-
-    def meter_defaults
-      {
-        height: 50,
-        max: 100,
-        notches: [],
-        notch_thickness: 10,
-        notch_color: 'black',
-        clipping_indicator: false,
-        clipping_indicator_thickness: 20,
-        clipping_indicator_color: 'yellow',
-      }
     end
 
     def clamped_value
