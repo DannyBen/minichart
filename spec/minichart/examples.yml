@@ -6,6 +6,13 @@ default_options: &default_options
   style: { additional: styling }
   color: purple
 
+meter_options: &meter_options
+  background: '#ddd'
+  stroke: 3
+  style: { additional: styling }
+  color: purple
+  notches: [0]
+
 examples:
   line_chart:
     basic: &basic_chart
@@ -22,8 +29,8 @@ examples:
     basic: &basic_meter
       data: 75
       options:
-        <<: *default_options
-        notches: [0, 50]
+        <<: *meter_options
+        notches: [0, 80]
         clipping_indicator: true
 
     negative:
@@ -33,40 +40,40 @@ examples:
     dual_negative:
       data: -75
       options:
-        <<: *default_options
+        <<: *meter_options
         mode: dual
-        notches: [0, 50]
+        notches: [0, 80]
 
     dual_positive:
       data: 75
       options:
-        <<: *default_options
+        <<: *meter_options
         mode: dual
-        notches: [0, 50]
+        notches: [0, 80]
 
     clipping_positive:
       data: 120
       options:
-        <<: *default_options
+        <<: *meter_options
         clipping_indicator: true
 
     clipping_negative:
       data: -120
       options:
-        <<: *default_options
+        <<: *meter_options
         clipping_indicator: true
 
     clipping_dual_positive:
       data: 120
       options:
-        <<: *default_options
+        <<: *meter_options
         clipping_indicator: true
         mode: dual
 
     clipping_dual_negative:
       data: -120
       options:
-        <<: *default_options
+        <<: *meter_options
         clipping_indicator: true
         mode: dual
 
