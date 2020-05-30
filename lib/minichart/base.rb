@@ -3,9 +3,31 @@ module Minichart
   class Base < Victor::SVGBase
     attr_reader :data, :options
 
+    class << self
+      def master_defaults
+        {
+          background: 'white',
+          height: 100,
+          width: 300,
+          stroke: 2,
+          style: {},
+          color: '#66f'
+        }
+      end
+
+      # For subclasses to define
+      def defaults
+        {}
+      end
+
+      def options
+        @options ||= master_defaults.merge defaults
+      end
+    end
+
     def initialize(data, user_options = {})
       @data = data
-      @options = master_defaults.merge(defaults).merge(user_options)
+      @options = self.class.options.merge user_options
 
       super viewBox: viewbox, style: options[:style]
       element :rect, x: 0, y: 0,
@@ -26,22 +48,6 @@ module Minichart
           element :rect, width: options[:width], height: options[:height]
         end
       end
-    end
-
-    def master_defaults
-      {
-        background: 'white',
-        height: 100,
-        width: 300,
-        stroke: 2,
-        style: {},
-        color: '#66f'
-      }
-    end
-
-    # For subclasses
-    def defaults
-      {}
     end
 
     def viewbox
