@@ -13,7 +13,7 @@
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<polyline fill="green" stroke="green" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="0,50 0.0,50.0 62.5,16.666666666666668 125.0,33.333333333333336 187.5,0.0 250.0,16.666666666666668 250,50"/>
+<polyline fill="green" stroke="green" stroke-width="2" stroke-linejoin="round" points="0,50 0.0,50.0 62.5,16.666666666666668 125.0,33.333333333333336 187.5,0.0 250.0,16.666666666666668 250,50"/>
 </g>
 
 </svg>
