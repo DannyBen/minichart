@@ -122,7 +122,7 @@ negative = HorizontalBarMeter.new -80,
 
 dual = HorizontalBarMeter.new 80,
   height: 20, width: 250, background: '#99f', color: 'blue',
-  mode: :dual, zero_line: true
+  mode: :dual, notches: [0]
 ```
 
 Meter charts support [additional options](#meter-options).
@@ -140,7 +140,7 @@ negative = VerticalBarMeter.new -80,
 
 dual = VerticalBarMeter.new 80,
   width: 20, height: 250, background: '#99f', color: 'blue',
-  mode: :dual, zero_line: true
+  mode: :dual, notches: [0]
 ```
 
 Meter charts support [additional options](#meter-options).
