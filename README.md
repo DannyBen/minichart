@@ -201,7 +201,7 @@ Chart height in pixels.
 
 #### width
 
-Chart width in pixels                                        |.
+Chart width in pixels.
 
 #### stroke
 
@@ -215,7 +215,6 @@ CSS Style hash to apply to the entire SVG.
 ### Meter Options
 
 Meter charts support these options in additon to the basic options:
-
 
 #### mode
 
