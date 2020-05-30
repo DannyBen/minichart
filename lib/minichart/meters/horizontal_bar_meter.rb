@@ -2,55 +2,56 @@ module Minichart
   class HorizontalBarMeter < Meter
     def build
       draw_bar
-      draw_zero_line if zero_line
-      draw_clipping_indicator if clipping_indicator and clipping?
+      draw_notches if options[:notches]
+      draw_clipping_indicator if options[:clipping_indicator] and clipping?
     end
 
   protected
 
-    def draw_bar
-      x = if mode == :negative
-        width - bar_width
-      elsif mode == :dual
-        middle = width * 0.5
-        value >= 0 ? middle : middle - bar_width
-      else
-        0
-      end
+    def defaults
+      meter_defaults.merge width: 300, height: 50
+    end
 
-      element :rect, x: x, y: 0, height: height, width: bar_width, style: style
+    def draw_bar
+      x1 = x_for 0
+      x2 = x_for clamped_value
+      x = [x1, x2].min
+
+      element :rect, x: x, y: 0, height: options[:height],
+        width: bar_width, style: style
+    end
+
+    def draw_notches
+      options[:notches].each do |notch|
+        draw_notch notch
+        draw_notch -notch if mode == :dual and notch != 0
+      end
+    end
+
+    def draw_notch(notch)
+      draw_vertical_line notch, stroke: options[:notch_thickness],
+        color: options[:notch_color]
     end
 
     def draw_clipping_indicator
-      x = if mode == :positive or (mode == :dual and value > 0)
-        width - clipping_indicator_size
-      else
-        0
-      end
-
-      element :rect, x: x, y: 0,
-        height: height, width: clipping_indicator_size,
-        fill: clipping_indicator_color, stroke_width: 0
-
+      draw_vertical_line clamped_value,
+        stroke: options[:clipping_indicator_thickness],
+        color: options[:clipping_indicator_color]
     end
 
-    def draw_zero_line
-      x = if mode == :negative
-        width - zero_line_size
-      elsif mode == :dual
-        width / 2 - zero_line_size / 2
-      else
-        0
-      end
+    def draw_vertical_line(target_value, color:, stroke:)
+      x = x_for target_value
 
-      element :rect, x: x, y: 0,
-        height: height, width: zero_line_size,
-        fill: zero_line_color, stroke_width: 0
-
+      element :line, x1: x, x2: x, y1: 0, y2: options[:height],
+        stroke: color, stroke_width: stroke
     end
 
     def width_factor
-      width / max.to_f
+      options[:width] / options[:max].to_f
+    end
+
+    def half_width
+      options[:width] * 0.5
     end
 
     def bar_width
@@ -58,6 +59,19 @@ module Minichart
         clamped_value.abs * width_factor * 0.5
       else
         clamped_value.abs * width_factor
+      end
+    end
+
+    def x_for(target_value)
+      result = target_value.abs / options[:max].to_f * options[:width]
+
+      case mode
+      when :positive
+        result
+      when :negative
+        options[:width] - result
+      when :dual
+        target_value / options[:max].to_f * half_width + half_width
       end
     end
   end

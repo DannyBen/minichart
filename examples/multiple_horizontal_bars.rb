@@ -3,14 +3,14 @@ include Minichart
 include Victor
 
 positive = HorizontalBarMeter.new 70,
-  height: 20, width: 250, background: '#9f9', color: 'green'
+  height: 20, width: 250, background: '#9f9', color: 'green', notches: [0]
 
 negative = HorizontalBarMeter.new -80,
-  height: 20, width: 250, background: '#f99', color: 'red'
+  height: 20, width: 250, background: '#f99', color: 'red', notches: [0]
 
 dual = HorizontalBarMeter.new 80,
   height: 20, width: 250, background: '#99f', color: 'blue',
-  mode: :dual, zero_line: true
+  mode: :dual, notches: [0]
 
 svg = SVG.new width: 250, viewBox: "0 0 250 70"
 svg.build do

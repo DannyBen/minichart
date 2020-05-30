@@ -1,0 +1,15 @@
+---
+:background: white
+:height: 50
+:width: 300
+:stroke: 2
+:style: {}
+:color: "#66f"
+:max: 100
+:notches: []
+:notch_thickness: 10
+:notch_color: black
+:clipping_indicator: false
+:clipping_indicator_thickness: 20
+:clipping_indicator_color: yellow
+:mode: :auto

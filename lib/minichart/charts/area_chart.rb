@@ -1,9 +1,9 @@
 module Minichart
   class AreaChart < Chart
     def build
-      element :polyline, fill: color,
-        stroke: color,
-        stroke_width: stroke,
+      element :polyline, fill: options[:color],
+        stroke: options[:color],
+        stroke_width: options[:stroke],
         stroke_linejoin: :round,
         points: points
     end
@@ -11,15 +11,15 @@ module Minichart
   protected
 
     def points
-      result = ["0,#{height}"]
+      result = ["0,#{options[:height]}"]
 
       inverted_points.each do |point|
-        x = width*point[0]
-        y = height*point[1]
+        x = options[:width] *point[0]
+        y = options[:height] * point[1]
         result << "#{x},#{y}"
       end
 
-      result << "#{width},#{height}"
+      result << "#{options[:width]},#{options[:height]}"
 
       result
     end

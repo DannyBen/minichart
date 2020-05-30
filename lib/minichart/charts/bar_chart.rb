@@ -11,18 +11,22 @@ module Minichart
   protected
 
     def bar_width
-      @bar_width ||= width / data.size
+      @bar_width ||= options[:width] / data.size
     end
 
     def bar_options(x, y)
-      y = y*height
-      bar_height = height-y
+      y = y * options[:height]
+      bar_height = options[:height] - y
       { 
-        x: x*width, 
+        x: x * options[:width], 
         y: y, 
-        width: bar_width, 
-        height: bar_height, 
-        style: { fill: color, stroke_width: stroke, stroke: background }
+        width: bar_width,
+        height: bar_height,
+        style: {
+          fill: options[:color],
+          stroke_width: options[:stroke],
+          stroke: options[:background]
+        }
       }
     end
   end

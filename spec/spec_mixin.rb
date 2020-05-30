@@ -6,7 +6,6 @@ module SpecMixin
       approval_file = "#{set}/#{name}.svg"
       data = config['data']
       options = config['options'].transform_keys(&:to_sym)
-      p options
       subject = described_class.new data, options
 
       IDGenerator.reset
