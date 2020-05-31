@@ -19,7 +19,7 @@ module Minichart
       y2 = y_for clamped_value
       y = [y1, y2].min
 
-      element :rect, x: 0, y: y, height: bar_height,
+      element :rect, x: options[:padding], y: y, height: bar_height,
         width: options[:width], style: style
     end
 
@@ -44,7 +44,8 @@ module Minichart
     def draw_horizontal_line(target_value, color:, stroke:)
       y = y_for target_value
 
-      element :line, x1: 0, x2: options[:width], y1: y, y2: y,
+      element :line, x1: options[:padding], x2: options[:width] + options[:padding],
+        y1: y, y2: y,
         stroke: color, stroke_width: stroke
     end
 
@@ -65,7 +66,7 @@ module Minichart
     end
 
     def y_for(target_value)
-      result = target_value.abs / options[:max].to_f * options[:height]
+      result = target_value.abs / options[:max].to_f * options[:height] - options[:padding]
 
       case mode
       when :positive

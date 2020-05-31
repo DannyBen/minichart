@@ -6,13 +6,13 @@ module Minichart
     class << self
       def master_defaults
         {
-          background: '#ccc',   # TODO: REVERT BACK TO WHITE
+          background: 'white',
           height: 100,
           width: 300,
           stroke: 2,
           style: {},
           color: '#66f',
-          padding: 10,          # TODO: Set to a normal value
+          padding: 10,
         }
       end
 

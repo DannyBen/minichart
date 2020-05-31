@@ -1,21 +1,21 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg viewBox="0 0 50 300" style="additional:styling" width="100%" height="100%" 
+<svg viewBox="0 0 70 320" style="additional:styling" width="100%" height="100%" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
-<rect x="0" y="0" width="50" height="300" fill="#ddd" stroke-width="0"/>
+<rect x="0" y="0" width="70" height="320" fill="#ddd" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-1">
-<rect width="50" height="300"/>
+<rect width="70" height="320"/>
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<rect x="0" y="75.0" height="225.0" width="50" style="fill:purple; stroke-width:3; stroke:#ddd"/>
-<line x1="0" x2="50" y1="300.0" y2="300.0" stroke="black" stroke-width="10"/>
-<line x1="0" x2="50" y1="60.0" y2="60.0" stroke="black" stroke-width="10"/>
+<rect x="10" y="85.0" height="225.0" width="50" style="fill:purple; stroke-width:3; stroke:#ddd"/>
+<line x1="10" x2="60" y1="310.0" y2="310.0" stroke="black" stroke-width="10"/>
+<line x1="10" x2="60" y1="70.0" y2="70.0" stroke="black" stroke-width="10"/>
 </g>
 
 </svg>

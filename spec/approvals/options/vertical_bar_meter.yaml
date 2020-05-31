@@ -5,6 +5,7 @@
 :stroke: 2
 :style: {}
 :color: "#66f"
+:padding: 10
 :max: 100
 :notches: []
 :notch_thickness: 10

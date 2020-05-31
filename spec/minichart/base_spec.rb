@@ -20,7 +20,7 @@ describe Base do
           subject.options background: 'platinum', width: 123
           expect(subject.options[:background]).to eq "platinum"
           expect(subject.options[:width]).to eq 123
-          expect(subject.options.keys).to eq [:background, :height, :width, :stroke, :style, :color]
+          expect(subject.options.keys).to eq [:background, :height, :width, :stroke, :style, :color, :padding]
         end
       end
     end
