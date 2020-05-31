@@ -5,21 +5,25 @@ module Minichart
         stroke: options[:color],
         stroke_width: options[:stroke],
         stroke_linejoin: :round,
+        stroke_linecap: :round,
         points: points
     end
 
   protected
 
     def points
-      result = ["0,#{options[:height]}"]
+      first_point = "#{options[:padding]},#{options[:height] + options[:padding]}"
+      result = [first_point]
 
       inverted_points.each do |point|
-        x = options[:width] *point[0]
-        y = options[:height] * point[1]
+        x = options[:width] * point[0] + options[:padding]
+        y = options[:height] * point[1] + options[:padding]
         result << "#{x},#{y}"
       end
 
-      result << "#{options[:width]},#{options[:height]}"
+      result << "#{options[:width] + options[:padding]},#{options[:height] + options[:padding]}"
+      result << first_point
+      
 
       result
     end

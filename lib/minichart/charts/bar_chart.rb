@@ -15,10 +15,11 @@ module Minichart
     end
 
     def bar_options(x, y)
-      y = y * options[:height]
-      bar_height = options[:height] - y
+      y = y * options[:height] + options[:padding]
+
+      bar_height = options[:height] - y + options[:padding]
       { 
-        x: x * options[:width], 
+        x: x * options[:width] + options[:padding], 
         y: y, 
         width: bar_width,
         height: bar_height,
