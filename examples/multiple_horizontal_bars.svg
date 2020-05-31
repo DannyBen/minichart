@@ -1,45 +1,45 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg width="250" viewBox="0 0 250 70" height="100%" 
+<svg width="254" viewBox="0 0 254 80" height="100%" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
 <g transform="translate(0 0)">
-<rect x="0" y="0" width="250" height="20" fill="#9f9" stroke-width="0"/>
+<rect x="0" y="0" width="254" height="24" fill="#9f9" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-1">
-<rect width="250" height="20"/>
+<rect width="254" height="24"/>
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<rect x="0.0" y="0" height="20" width="175.0" style="fill:green; stroke-width:2; stroke:#9f9"/>
-<line x1="0.0" x2="0.0" y1="0" y2="20" stroke="black" stroke-width="6"/>
+<rect x="2.0" y="2" height="20" width="175.0" style="fill:green; stroke-width:2; stroke:#9f9"/>
+<line x1="2.0" x2="2.0" y1="2" y2="22" stroke="black" stroke-width="4"/>
 </g>
 </g>
-<g transform="translate(0 25)">
-<rect x="0" y="0" width="250" height="20" fill="#f99" stroke-width="0"/>
+<g transform="translate(0 28)">
+<rect x="0" y="0" width="254" height="24" fill="#f99" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-2">
-<rect width="250" height="20"/>
+<rect width="254" height="24"/>
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-2)">
-<rect x="50.0" y="0" height="20" width="200.0" style="fill:red; stroke-width:2; stroke:#f99"/>
-<line x1="250.0" x2="250.0" y1="0" y2="20" stroke="black" stroke-width="6"/>
+<rect x="52.0" y="2" height="20" width="200.0" style="fill:red; stroke-width:2; stroke:#f99"/>
+<line x1="252.0" x2="252.0" y1="2" y2="22" stroke="black" stroke-width="4"/>
 </g>
 </g>
-<g transform="translate(0 50)">
-<rect x="0" y="0" width="250" height="20" fill="#99f" stroke-width="0"/>
+<g transform="translate(0 56)">
+<rect x="0" y="0" width="254" height="24" fill="#99f" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-3">
-<rect width="250" height="20"/>
+<rect width="254" height="24"/>
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-3)">
-<rect x="125.0" y="0" height="20" width="100.0" style="fill:blue; stroke-width:2; stroke:#99f"/>
-<line x1="125.0" x2="125.0" y1="0" y2="20" stroke="black" stroke-width="6"/>
+<rect x="127.0" y="2" height="20" width="100.0" style="fill:blue; stroke-width:2; stroke:#99f"/>
+<line x1="127.0" x2="127.0" y1="2" y2="22" stroke="black" stroke-width="4"/>
 </g>
 </g>
 

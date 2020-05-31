@@ -19,7 +19,7 @@ module Minichart
       x2 = x_for clamped_value
       x = [x1, x2].min
 
-      element :rect, x: x, y: 0, height: options[:height],
+      element :rect, x: x, y: options[:padding], height: options[:height],
         width: bar_width, style: style
     end
 
@@ -44,7 +44,8 @@ module Minichart
     def draw_vertical_line(target_value, color:, stroke:)
       x = x_for target_value
 
-      element :line, x1: x, x2: x, y1: 0, y2: options[:height],
+      element :line, x1: x, x2: x,
+        y1: options[:padding], y2: options[:height] + options[:padding],
         stroke: color, stroke_width: stroke
     end
 
@@ -65,15 +66,15 @@ module Minichart
     end
 
     def x_for(target_value)
-      result = target_value.abs / options[:max].to_f * options[:width]
+      result = target_value.abs / options[:max].to_f * options[:width] + options[:padding]
 
       case mode
       when :positive
         result
       when :negative
-        options[:width] - result
+        full_width - result
       when :dual
-        target_value / options[:max].to_f * half_width + half_width
+        target_value / options[:max].to_f * half_width + half_width + options[:padding]
       end
     end
   end

@@ -11,7 +11,8 @@ module Minichart
           width: 300,
           stroke: 2,
           style: {},
-          color: '#66f'
+          color: '#66f',
+          padding: 10,
         }
       end
 
@@ -33,7 +34,7 @@ module Minichart
 
       super viewBox: viewbox, style: options[:style]
       element :rect, x: 0, y: 0,
-        width: options[:width], height: options[:height],
+        width: full_width, height: full_height,
         fill: options[:background], stroke_width: 0
 
       clip_path_id = IDGenerator.next
@@ -47,13 +48,21 @@ module Minichart
     def setup_clip_path(id)
       element :defs do
         element :clipPath, id: id do
-          element :rect, width: options[:width], height: options[:height]
+          element :rect, width: full_width, height: full_height
         end
       end
     end
 
     def viewbox
-      "0 0 #{options[:width]} #{options[:height]}"
+      "0 0 #{full_width} #{full_height}"
+    end
+
+    def full_height
+      options[:height] + options[:padding] * 2
+    end
+
+    def full_width
+      options[:width] + options[:padding] * 2
     end
 
     def build
