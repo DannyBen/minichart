@@ -211,7 +211,7 @@ Line stroke width. This has a different effect in different chart types.
 
 CSS Style hash to apply to the entire SVG.
 
-#### Padding
+#### padding
 
 Chart padding in pixels.
 
