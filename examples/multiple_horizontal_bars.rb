@@ -12,12 +12,13 @@ dual = HorizontalBarMeter.new 80,
   height: 20, width: 250, background: '#99f', color: 'blue',
   mode: :dual, notches: [0]
 
-svg = SVG.new width: 250, viewBox: "0 0 250 70"
+svg = SVG.new width: 254, viewBox: "0 0 254 80"
 svg.build do
   g(transform: "translate(0 0)")  { append positive }
-  g(transform: "translate(0 25)") { append negative }
-  g(transform: "translate(0 50)") { append dual }
+  g(transform: "translate(0 28)") { append negative }
+  g(transform: "translate(0 56)") { append dual }
 end
 
 svg.save 'multiple_horizontal_bars'
+
 

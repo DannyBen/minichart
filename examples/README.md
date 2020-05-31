@@ -88,11 +88,11 @@ linechart = LineChart.new random_data(20), options.merge({ color: 'green' })
 barchart  = BarChart.new  random_data(40), options.merge({ color: 'blue' })
 areachart = AreaChart.new random_data(20), options.merge({ color: 'red' })
 
-svg = SVG.new viewBox: "0 0 920 60"
+svg = SVG.new viewBox: "0 0 980 80"
 svg.build do
   g(transform: "translate(0 0)")  { append linechart }
-  g(transform: "translate(310 0)") { append barchart }
-  g(transform: "translate(620 0)")  { append areachart }
+  g(transform: "translate(330 0)") { append barchart }
+  g(transform: "translate(660 0)")  { append areachart }
 end
 
 svg.save 'multiple'
@@ -118,11 +118,11 @@ dual = HorizontalBarMeter.new 80,
   height: 20, width: 250, background: '#99f', color: 'blue',
   mode: :dual, notches: [0]
 
-svg = SVG.new width: 250, viewBox: "0 0 250 70"
+svg = SVG.new width: 254, viewBox: "0 0 254 80"
 svg.build do
   g(transform: "translate(0 0)")  { append positive }
-  g(transform: "translate(0 25)") { append negative }
-  g(transform: "translate(0 50)") { append dual }
+  g(transform: "translate(0 28)") { append negative }
+  g(transform: "translate(0 56)") { append dual }
 end
 
 svg.save 'multiple_horizontal_bars'
@@ -148,11 +148,11 @@ dual = VerticalBarMeter.new 80,
   width: 20, height: 250, background: '#99f', color: 'blue',
   mode: :dual, notches: [0]
 
-svg = SVG.new width: 70, viewBox: "0 0 70 250"
+svg = SVG.new viewBox: "0 0 80 254"
 svg.build do
   g(transform: "translate(0) 0")  { append positive }
-  g(transform: "translate(25 0)") { append negative }
-  g(transform: "translate(50 0)") { append dual }
+  g(transform: "translate(28 0)") { append negative }
+  g(transform: "translate(56 0)") { append dual }
 end
 
 svg.save 'multiple_vertical_bars'

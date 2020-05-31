@@ -66,15 +66,15 @@ module Minichart
     end
 
     def y_for(target_value)
-      result = target_value.abs / options[:max].to_f * options[:height] - options[:padding]
+      result = target_value.abs / options[:max].to_f * options[:height] + options[:padding]
 
       case mode
       when :positive
-        options[:height] - result
+        full_height - result
       when :negative
         result
       when :dual
-        options[:height] - (target_value / options[:max].to_f * half_height + half_height)
+        options[:height] - (target_value / options[:max].to_f * half_height + half_height) + options[:padding]
       end
     end
   end

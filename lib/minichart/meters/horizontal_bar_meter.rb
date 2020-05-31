@@ -72,9 +72,9 @@ module Minichart
       when :positive
         result
       when :negative
-        options[:width] - result
+        full_width - result
       when :dual
-        target_value / options[:max].to_f * half_width + half_width
+        target_value / options[:max].to_f * half_width + half_width + options[:padding]
       end
     end
   end

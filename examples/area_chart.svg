@@ -1,19 +1,19 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg viewBox="0 0 250 50" style="" width="100%" height="100%" 
+<svg viewBox="0 0 270 70" style="" width="100%" height="100%" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
-<rect x="0" y="0" width="250" height="50" fill="#eee" stroke-width="0"/>
+<rect x="0" y="0" width="270" height="70" fill="#eee" stroke-width="0"/>
 <defs>
 <clipPath id="minichart-1">
-<rect width="250" height="50"/>
+<rect width="270" height="70"/>
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<polyline fill="green" stroke="green" stroke-width="2" stroke-linejoin="round" points="0,50 0.0,50.0 62.5,16.666666666666668 125.0,33.333333333333336 187.5,0.0 250.0,16.666666666666668 250,50"/>
+<polyline fill="green" stroke="green" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="10,60 10.0,60.0 72.5,26.666666666666668 135.0,43.333333333333336 197.5,10.0 260.0,26.666666666666668 260,60 10,60"/>
 </g>
 
 </svg>
