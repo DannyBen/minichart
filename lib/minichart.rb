@@ -8,5 +8,8 @@ require 'minichart/charts/area_chart'
 require 'minichart/meters/meter'
 require 'minichart/meters/vertical_bar_meter'
 require 'minichart/meters/horizontal_bar_meter'
+require 'minichart/leds/leds'
+require 'minichart/leds/horizontal_status_leds'
+require 'minichart/leds/vertical_status_leds'
 
 require 'byebug' if ENV['BYEBUG']

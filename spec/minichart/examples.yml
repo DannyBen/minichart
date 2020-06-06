@@ -78,3 +78,23 @@ examples:
         mode: dual
 
   vertical_bar_meter: *bar_meter
+
+  horizontal_status_leds:
+    basic: &basic_leds
+      data: [1,1,1,0,-1,-1,-1]
+      options: &leds_options
+        background: '#ccc'
+        width: 200
+        height: 60
+        positive_color: green
+        negative_color: red
+        neutral_color: '#eee'
+        stroke: 4
+
+  vertical_status_leds:
+    basic: 
+      <<: *basic_leds
+      options:
+        <<: *leds_options
+        height: 200
+        width: 60

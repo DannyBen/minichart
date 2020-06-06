@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg viewBox="0 0 204 64" style="" width="100%" height="100%" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<rect x="0" y="0" width="204" height="64" fill="#ccc" stroke-width="0"/>
+<defs>
+<clipPath id="minichart-1">
+<rect width="204" height="64"/>
+</clipPath>
+</defs>
+<g clip-path="url(#minichart-1)">
+<rect x="2" y="2" width="28" height="60" style="fill:green; stroke-width:4; stroke:#ccc"/>
+<rect x="30" y="2" width="28" height="60" style="fill:green; stroke-width:4; stroke:#ccc"/>
+<rect x="58" y="2" width="28" height="60" style="fill:green; stroke-width:4; stroke:#ccc"/>
+<rect x="86" y="2" width="28" height="60" style="fill:#eee; stroke-width:4; stroke:#ccc"/>
+<rect x="114" y="2" width="28" height="60" style="fill:red; stroke-width:4; stroke:#ccc"/>
+<rect x="142" y="2" width="28" height="60" style="fill:red; stroke-width:4; stroke:#ccc"/>
+<rect x="170" y="2" width="28" height="60" style="fill:red; stroke-width:4; stroke:#ccc"/>
+</g>
+
+</svg>

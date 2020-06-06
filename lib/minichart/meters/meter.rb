@@ -5,7 +5,6 @@ module Minichart
     class << self
       def meter_defaults
         @meter_defaults ||= {
-          height: 50,
           max: 100,
           notches: [],
           notch_thickness: 4,
