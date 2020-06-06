@@ -212,92 +212,39 @@ chart.options[:background] = 'yellow'
 
 ### Basic Options
 
-#### background
-
-Chart background color.
-
-#### color
-
-Chart color.
-
-#### height
-
-Chart height in pixels.
-
-#### width
-
-Chart width in pixels.
-
-#### stroke
-
-Line stroke width. This has a different effect in different chart types.
-
-#### style
-
-CSS Style hash to apply to the entire SVG.
-
-#### padding
-
-Chart padding in pixels.
-
+- **background**: Chart background color.
+- **color**: Chart color.
+- **height**: Chart height in pixels.
+- **width**: Chart width in pixels.
+- **stroke**: Line stroke width. This has a different effect in different chart types.
+- **style**: CSS Style hash to apply to the entire SVG.
+- **padding**: Chart padding in pixels.
 
 ### Meter Options
 
 Meter charts support these options in additon to the basic options:
 
-#### mode
-
-Display mode. Can be `:positive`, `:negative`, `:dual` or `:auto` (default).
-
-The `:auto` mode will switch between `:positive` and `:negative` based on the
-value.
-
-#### max
-
-The absolute maximum value. This number should be positive even for negative
-charts.
-
-#### notches
-
-An array of one or more levels to place a notch marker. Use positive values
-only.
-
-#### notch_thickness
-
-Thickness of the notch markers.
-
-#### notch_color
-
-Color of the notch markers.
-
-#### clipping_indicator
-
-If true, show a marker when the value exceeds the range.
-
-#### clipping_indicator_thickness
-
-Thickness of the clipping indicator.
-
-#### clipping_indicator_color
-
-Color of the clipping indicator.
+- **mode**: Display mode. Can be `:positive`, `:negative`, `:dual` or `:auto` (default).
+  The `:auto` mode will switch between `:positive` and `:negative` based on the
+  value.
+- **max**: The absolute maximum value. This number should be positive even for negative
+  charts.
+- **notches**: An array of one or more levels to place a notch marker. Use positive values
+  only.
+- **notch_thickness**: Thickness of the notch markers.
+- **notch_color**: Color of the notch markers.
+- **clipping_indicator**: If true, show a marker when the value exceeds the range.
+- **clipping_indicator_thickness**: Thickness of the clipping indicator.
+- **clipping_indicator_color**: Color of the clipping indicator.
 
 ### Leds Options
 
-Leds charts support these options in additon to the basic options (excluding
+Led charts support these options in additon to the basic options (excluding
 the `color` option):
 
-#### positive_color
-
-Color to use when the value is greater than 0.
-
-#### negative_color
-
-Color to use when the value is less than 0.
-
-#### neutral_color
-
-Color to use when the value is 0 or nil.
+- **positive_color**: Color to use when the value is greater than 0.
+- **negative_color**: Color to use when the value is less than 0.
+- **neutral_color**: Color to use when the value is 0 or nil.
 
 ## Examples
 
