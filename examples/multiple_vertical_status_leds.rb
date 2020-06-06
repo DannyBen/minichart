@@ -2,7 +2,7 @@ require 'minichart'
 include Minichart
 include Victor
 
-positive = VerticalBarMeter.new 70,
+one = VerticalBarMeter.new 70,
   width: 20, height: 250, background: '#9f9', color: 'green', notches: [0]
 
 negative = VerticalBarMeter.new -80,

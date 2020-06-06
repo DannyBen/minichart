@@ -1,0 +1,11 @@
+---
+:background: white
+:height: 300
+:width: 50
+:stroke: 2
+:style: {}
+:color: "#66f"
+:padding: 2
+:positive_color: "#6f6"
+:negative_color: "#f66"
+:neutral_color: "#eee"
