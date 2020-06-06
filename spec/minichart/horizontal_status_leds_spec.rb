@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe HorizontalStatusLeds do
-  subject { described_class.new [1,1,1,0,-1] }
+  subject { described_class.new [1,1,1,nil,0,-1] }
 
   spec_from_yaml 'horizontal_status_leds'
 

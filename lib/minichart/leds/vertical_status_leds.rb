@@ -24,7 +24,15 @@ module Minichart
 
     def bar_options(value, i)
       y = options[:padding] + (points - i - 1) * bar_height
-      color = value > 0 ? :positive_color : value < 0 ? :negative_color : :neutral_color
+      
+      color = if value == 0 or !value
+        :neutral_color
+      elsif value > 0
+        :positive_color
+      else
+        :negative_color
+      end
+
       { 
         x: options[:padding],
         y: y,

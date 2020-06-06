@@ -16,6 +16,8 @@ Create SVG mini charts with Ruby
   * [Area Chart](#area-chart)
   * [Horizontal Bar Meter](#horizontal-bar-meter)
   * [Vertical Bar Meter](#vertical-bar-meter)
+  * [Horizontal Status Leds](#horizontal-status-leds)
+  * [Vertical Status Leds](#vertical-status-leds)
 * [Configuration](#configuration)
   * [Class-level default options](#class-level-default-options)
   * [Instance initialization options](#instance-initialization-options)
@@ -145,6 +147,28 @@ dual = VerticalBarMeter.new 80,
 
 Meter charts support [additional options](#meter-options).
 
+### Horizontal Status Leds
+
+<img src='examples/horizontal_status_leds.svg' align='right'>
+
+```ruby
+plot = HorizontalStatusLeds.new [1,1,-1,0,1,1,1,1,1,-1,-1,1], background: '#ccc'
+plot.save 'horizontal_status_leds'
+```
+
+Led charts support [additional options](#leds-options).
+
+### Vertical Status Leds
+
+<img src='examples/vertical_status_leds.svg' align='right'>
+
+```ruby
+plot = VerticalStatusLeds.new [1,1,1,1,-1,1,-1,1,0,1], background: '#ccc'
+plot.save 'vertical_status_leds'
+```
+
+Led charts support [additional options](#leds-options).
+
 
 ## Configuration
 
@@ -256,6 +280,23 @@ Thickness of the clipping indicator.
 #### clipping_indicator_color
 
 Color of the clipping indicator.
+
+### Leds Options
+
+Leds charts support these options in additon to the basic options (excluding
+the `color` option):
+
+#### positive_color
+
+Color to use when the value is greater than 0.
+
+#### negative_color
+
+Color to use when the value is less than 0.
+
+#### neutral_color
+
+Color to use when the value is 0 or nil.
 
 ## Examples
 
