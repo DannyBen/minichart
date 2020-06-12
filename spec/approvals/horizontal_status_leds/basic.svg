@@ -13,14 +13,14 @@
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<rect x="2" y="2" width="25" height="60" style="fill:green; stroke-width:4; stroke:#ccc"/>
-<rect x="27" y="2" width="25" height="60" style="fill:green; stroke-width:4; stroke:#ccc"/>
-<rect x="52" y="2" width="25" height="60" style="fill:green; stroke-width:4; stroke:#ccc"/>
-<rect x="77" y="2" width="25" height="60" style="fill:#eee; stroke-width:4; stroke:#ccc"/>
-<rect x="102" y="2" width="25" height="60" style="fill:#eee; stroke-width:4; stroke:#ccc"/>
-<rect x="127" y="2" width="25" height="60" style="fill:red; stroke-width:4; stroke:#ccc"/>
-<rect x="152" y="2" width="25" height="60" style="fill:red; stroke-width:4; stroke:#ccc"/>
-<rect x="177" y="2" width="25" height="60" style="fill:red; stroke-width:4; stroke:#ccc"/>
+<rect x="2.0" y="2" width="25.0" height="60" style="opacity:1.0; fill:green; stroke-width:4; stroke:#ccc"/>
+<rect x="27.0" y="2" width="25.0" height="60" style="opacity:1.0; fill:green; stroke-width:4; stroke:#ccc"/>
+<rect x="52.0" y="2" width="25.0" height="60" style="opacity:1.0; fill:green; stroke-width:4; stroke:#ccc"/>
+<rect x="77.0" y="2" width="25.0" height="60" style="opacity:1; fill:#eee; stroke-width:4; stroke:#ccc"/>
+<rect x="102.0" y="2" width="25.0" height="60" style="opacity:1; fill:#eee; stroke-width:4; stroke:#ccc"/>
+<rect x="127.0" y="2" width="25.0" height="60" style="opacity:1.0; fill:red; stroke-width:4; stroke:#ccc"/>
+<rect x="152.0" y="2" width="25.0" height="60" style="opacity:1.0; fill:red; stroke-width:4; stroke:#ccc"/>
+<rect x="177.0" y="2" width="25.0" height="60" style="opacity:1.0; fill:red; stroke-width:4; stroke:#ccc"/>
 </g>
 
 </svg>

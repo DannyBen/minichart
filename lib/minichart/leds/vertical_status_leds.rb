@@ -19,7 +19,7 @@ module Minichart
     end
 
     def bar_height
-      @bar_height ||= options[:height] / points
+      @bar_height ||= options[:height] / points.to_f
     end
 
     def bar_options(value, i)
@@ -39,6 +39,7 @@ module Minichart
         width: options[:width],
         height: bar_height,
         style: {
+          opacity: opacity(value),
           fill: options[color],
           stroke_width: options[:stroke],
           stroke: options[:background]

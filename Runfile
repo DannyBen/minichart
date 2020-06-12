@@ -53,8 +53,10 @@ action :readme do
   Dir['examples/*.rb'].each do |file|
     say_status :process, file
 
-
     basename = File.basename file, '.rb'
+
+    next if basename == "vertical_status_leds"
+    
     title = basename.tr '_', ' '
     code  = File.read(file).strip
     if File.exist? "examples/#{basename}.svg"
