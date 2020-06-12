@@ -33,6 +33,7 @@ module Minichart
         width: bar_width,
         height: options[:height],
         style: {
+          opacity: opacity(value),
           fill: options[color],
           stroke_width: options[:stroke],
           stroke: options[:background]
