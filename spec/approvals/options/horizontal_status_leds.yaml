@@ -9,3 +9,4 @@
 :positive_color: "#6f6"
 :negative_color: "#f66"
 :neutral_color: "#eee"
+:min_opacity: 1

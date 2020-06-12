@@ -17,14 +17,14 @@ module Minichart
 
     # Returns opacith level for a given value
     def opacity(value)
-      return 1 if value == 0
+      return 1 if !value or value == 0
       value.abs * ((1 - options[:min_opacity]) / max) + options[:min_opacity]
     end
 
     # Returns the absolute highest or loest value.
     # Used to define the availble range of values
     def max
-      @max ||= [data.max, data.min.abs].max.to_f
+      @max ||= [data.compact.max, data.compact.min.abs].max.to_f
     end
 
   end
