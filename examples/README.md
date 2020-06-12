@@ -41,6 +41,19 @@ plot.save 'horizontal_bar_meter'
 [![horizontal_bar_meter](horizontal_bar_meter.svg)](examples/horizontal_bar_meter.rb.svg)
 
 
+## horizontal status leds
+
+```ruby
+require 'minichart'
+include Minichart
+
+plot = HorizontalStatusLeds.new [1,1,-1,0,1,1,1,1,1,-1,-1,1], background: '#ccc'
+plot.save 'horizontal_status_leds'
+```
+
+[![horizontal_status_leds](horizontal_status_leds.svg)](examples/horizontal_status_leds.rb.svg)
+
+
 ## larger data
 
 ```ruby

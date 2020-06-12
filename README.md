@@ -28,7 +28,6 @@ Create SVG mini charts with Ruby
   * [Leds Options](#leds-options)
 * [Examples](#examples)
 
-
 ---
 
 ## Install
@@ -245,6 +244,7 @@ the `color` option):
 - **positive_color**: Color to use when the value is greater than 0.
 - **negative_color**: Color to use when the value is less than 0.
 - **neutral_color**: Color to use when the value is 0 or nil.
+- **min_opacity**: A value between 0 and 1 representing the minimum opacity that will be applied to values when they are lower than the maximum range.
 
 ## Examples
 
