@@ -60,6 +60,10 @@
 
 [Full Changelog](https://github.com/DannyBen/minichart/compare/v0.2.0...v0.2.1)
 
+**Merged pull requests:**
+
+- Add horizontal bar meter [\#3](https://github.com/DannyBen/minichart/pull/3) ([DannyBen](https://github.com/DannyBen))
+
 ## [v0.2.0](https://github.com/DannyBen/minichart/tree/v0.2.0) (2020-05-29)
 
 [Full Changelog](https://github.com/DannyBen/minichart/compare/v0.1.1...v0.2.0)
@@ -78,7 +82,6 @@
 
 **Merged pull requests:**
 
-- Add horizontal bar meter [\#3](https://github.com/DannyBen/minichart/pull/3) ([DannyBen](https://github.com/DannyBen))
 - Add support for colors [\#1](https://github.com/DannyBen/minichart/pull/1) ([DannyBen](https://github.com/DannyBen))
 
 
