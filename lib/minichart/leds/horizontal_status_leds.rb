@@ -15,7 +15,7 @@ module Minichart
   protected
 
     def bar_width
-      @bar_width ||= options[:width] / data.size
+      @bar_width ||= options[:width] / data.size.to_f
     end
 
     def bar_options(value, i)

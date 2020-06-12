@@ -19,7 +19,7 @@ module Minichart
     end
 
     def bar_height
-      @bar_height ||= options[:height] / points
+      @bar_height ||= options[:height] / points.to_f
     end
 
     def bar_options(value, i)

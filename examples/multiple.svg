@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg viewBox="0 0 980 120" width="100%" height="100%" 
+<svg viewBox="0 0 980 80" width="100%" height="100%" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -76,49 +76,6 @@
 </defs>
 <g clip-path="url(#minichart-3)">
 <polyline fill="red" stroke="red" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="10,70 10.0,70.0 25.789473684210527,68.70967741935485 41.578947368421055,67.09677419354838 57.368421052631575,69.03225806451613 73.15789473684211,59.03225806451613 88.94736842105263,59.354838709677416 104.73684210526315,67.74193548387098 120.52631578947368,48.064516129032256 136.31578947368422,67.41935483870968 152.10526315789474,38.38709677419355 167.89473684210526,52.25806451612903 183.6842105263158,53.54838709677419 199.4736842105263,32.25806451612903 215.26315789473682,36.12903225806451 231.05263157894737,53.87096774193549 246.8421052631579,51.612903225806456 262.63157894736844,46.12903225806452 278.4210526315789,10.0 294.2105263157895,16.451612903225808 310.0,54.193548387096776 310,70 10,70"/>
-</g>
-</g>
-<g transform="translate(0 90)">
-<rect x="0" y="0" width="494" height="24" fill="#ccd" stroke-width="0"/>
-<defs>
-<clipPath id="minichart-4">
-<rect width="494" height="24"/>
-</clipPath>
-</defs>
-<g clip-path="url(#minichart-4)">
-<rect x="247.0" y="2" height="20" width="196.0" style="fill:green; stroke-width:2; stroke:#ccd"/>
-<line x1="247.0" x2="247.0" y1="2" y2="22" stroke="black" stroke-width="4"/>
-</g>
-</g>
-<g transform="translate(500 90)">
-<rect x="0" y="0" width="484" height="24" fill="#ccd" stroke-width="0"/>
-<defs>
-<clipPath id="minichart-5">
-<rect width="484" height="24"/>
-</clipPath>
-</defs>
-<g clip-path="url(#minichart-5)">
-<rect x="2" y="2" width="22" height="20" style="opacity:1.0; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="24" y="2" width="22" height="20" style="opacity:0.95; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="46" y="2" width="22" height="20" style="opacity:0.9; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="68" y="2" width="22" height="20" style="opacity:0.8500000000000001; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="90" y="2" width="22" height="20" style="opacity:0.8; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="112" y="2" width="22" height="20" style="opacity:0.75; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="134" y="2" width="22" height="20" style="opacity:0.7; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="156" y="2" width="22" height="20" style="opacity:0.65; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="178" y="2" width="22" height="20" style="opacity:0.6; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="200" y="2" width="22" height="20" style="opacity:0.55; fill:red; stroke-width:2; stroke:#ccd"/>
-<rect x="222" y="2" width="22" height="20" style="opacity:1; fill:#eee; stroke-width:2; stroke:#ccd"/>
-<rect x="244" y="2" width="22" height="20" style="opacity:0.55; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="266" y="2" width="22" height="20" style="opacity:0.6; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="288" y="2" width="22" height="20" style="opacity:0.65; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="310" y="2" width="22" height="20" style="opacity:0.7; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="332" y="2" width="22" height="20" style="opacity:0.75; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="354" y="2" width="22" height="20" style="opacity:0.8; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="376" y="2" width="22" height="20" style="opacity:0.8500000000000001; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="398" y="2" width="22" height="20" style="opacity:0.9; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="420" y="2" width="22" height="20" style="opacity:0.95; fill:green; stroke-width:2; stroke:#ccd"/>
-<rect x="442" y="2" width="22" height="20" style="opacity:1.0; fill:green; stroke-width:2; stroke:#ccd"/>
 </g>
 </g>
 

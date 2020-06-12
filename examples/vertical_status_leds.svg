@@ -13,16 +13,16 @@
 </clipPath>
 </defs>
 <g clip-path="url(#minichart-1)">
-<rect x="2" y="272" width="50" height="30" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="242" width="50" height="30" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="212" width="50" height="30" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="182" width="50" height="30" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="152" width="50" height="30" style="opacity:1.0; fill:#f66; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="122" width="50" height="30" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="92" width="50" height="30" style="opacity:1.0; fill:#f66; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="62" width="50" height="30" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="32" width="50" height="30" style="opacity:1; fill:#eee; stroke-width:2; stroke:#ccc"/>
-<rect x="2" y="2" width="50" height="30" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="272.0" width="50" height="30.0" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="242.0" width="50" height="30.0" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="212.0" width="50" height="30.0" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="182.0" width="50" height="30.0" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="152.0" width="50" height="30.0" style="opacity:1.0; fill:#f66; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="122.0" width="50" height="30.0" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="92.0" width="50" height="30.0" style="opacity:1.0; fill:#f66; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="62.0" width="50" height="30.0" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="32.0" width="50" height="30.0" style="opacity:1; fill:#eee; stroke-width:2; stroke:#ccc"/>
+<rect x="2" y="2.0" width="50" height="30.0" style="opacity:1.0; fill:#6f6; stroke-width:2; stroke:#ccc"/>
 </g>
 
 </svg>
