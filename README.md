@@ -86,7 +86,7 @@ The objects returned from all the mini chart classes are [Victor::SVG][2] object
 
 ### Line Chart
 
-<img src='examples/line_chart.svg' align='right' width=300>
+<img src='examples/line_chart.svg' align='right' width=200>
 
 ```ruby
 LineChart.new [10, 30, 20, 40, 30], background: '#eee',
@@ -95,7 +95,7 @@ LineChart.new [10, 30, 20, 40, 30], background: '#eee',
 
 ### Bar Chart
 
-<img src='examples/bar_chart.svg' align='right' width=300>
+<img src='examples/bar_chart.svg' align='right' width=200>
 
 ```ruby
 BarChart.new [10, 30, 20, 40, 30], background: '#eee',
@@ -104,7 +104,7 @@ BarChart.new [10, 30, 20, 40, 30], background: '#eee',
 
 ### Area Chart
 
-<img src='examples/area_chart.svg' align='right' width=300>
+<img src='examples/area_chart.svg' align='right' width=200>
 
 ```ruby
 AreaChart.new [10, 30, 20, 40, 30], background: '#eee',
@@ -117,14 +117,16 @@ AreaChart.new [10, 30, 20, 40, 30], background: '#eee',
 
 ```ruby
 positive = HorizontalBarMeter.new 70,
-  height: 20, width: 250, background: '#9f9', color: 'green'
+  height: 20, width: 250, background: '#9f9',
+  color: 'green'
 
 negative = HorizontalBarMeter.new -80,
-  height: 20, width: 250, background: '#f99', color: 'red'
+  height: 20, width: 250, background: '#f99',
+  color: 'red'
 
 dual = HorizontalBarMeter.new 80,
-  height: 20, width: 250, background: '#99f', color: 'blue',
-  mode: :dual, notches: [0]
+  height: 20, width: 250, background: '#99f',
+  color: 'blue', mode: :dual, notches: [0]
 ```
 
 Meter charts support [additional options](#meter-options).
@@ -181,7 +183,8 @@ See or set default options for any chart class by calling its `::options` method
 ```ruby
 # See all options
 p AreaChart.options
-#=> {:background=>"white", :height=>100, :width=>300, :stroke=>2, :style=>{}, :color=>"#66f"}
+#=> {:background=>"white", :height=>100, :width=>300, :stroke=>2,
+     :style=>{}, :color=>"#66f"}
 
 # Set a single default option
 AreaChart.options[:color] = '#333'
