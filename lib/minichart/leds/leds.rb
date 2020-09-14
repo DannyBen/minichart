@@ -15,7 +15,7 @@ module Minichart
 
   protected
 
-    # Returns opacith level for a given value
+    # Returns opacity level for a given value
     def opacity(value)
       return 1 if !value or value == 0
       value.abs * ((1 - options[:min_opacity]) / max) + options[:min_opacity]
