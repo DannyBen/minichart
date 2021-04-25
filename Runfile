@@ -9,7 +9,6 @@ version Minichart::VERSION
 
 RunfileTasks::RubyGems.all 'minichart'
 RunfileTasks::Testing.rspec
-RunfileTasks::Changelog.generator "DannyBen/minichart"
 
 command "examples"
 
@@ -83,5 +82,12 @@ action :readme do
 end
 
 endcommand
+
+help   "Generate changelog and append old changelog"
+action :changelog do
+  run "git changelog --save"
+  # append older changelog (prior to switching to git-changelog)
+  run "cat .changelog.old.md >> CHANGELOG.md"
+end
 
 require_relative 'debug.rb' if File.exist? 'debug.rb'
