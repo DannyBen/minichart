@@ -41,6 +41,24 @@ plot.save 'horizontal_bar_meter'
 [![horizontal_bar_meter](horizontal_bar_meter.svg)](examples/horizontal_bar_meter.rb.svg)
 
 
+## horizontal led levels
+
+```ruby
+require 'minichart'
+include Minichart
+
+data = (-20..20).to_a
+plot = Minichart::HorizontalStatusLeds.new data,
+  min_opacity: 0.1, 
+  positive_color: 'green',
+  negative_color: 'red'
+
+plot.save 'horizontal_led_levels'
+```
+
+[![horizontal_led_levels](horizontal_led_levels.svg)](examples/horizontal_led_levels.rb.svg)
+
+
 ## horizontal status leds
 
 ```ruby

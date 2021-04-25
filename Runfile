@@ -2,6 +2,7 @@ require "runfile-tasks"
 require 'filewatcher'
 
 require_relative 'lib/minichart'
+require_relative 'lib/minichart/version'
 
 title   "Minichart Developer Toolbelt"
 summary "Runfile tasks for building the Minichart gem"
