@@ -1,8 +1,11 @@
 require "runfile-tasks"
 require 'filewatcher'
+require 'colsole'
 
 require_relative 'lib/minichart'
 require_relative 'lib/minichart/version'
+
+include Colsole
 
 title   "Minichart Developer Toolbelt"
 summary "Runfile tasks for building the Minichart gem"
@@ -28,7 +31,7 @@ action :watch do |args|
 
     Dir.chdir folder do
       filename = File.basename filename
-      run "ruby #{filename}"
+      system "ruby #{filename}"
     end
   end
 end
@@ -39,7 +42,7 @@ action :build do
   File.delete *Dir['examples/*.svg']
   Dir.chdir 'examples' do
     Dir['*.rb'].each do |filename|
-      run "ruby #{filename}"
+      system "ruby #{filename}"
     end
   end
   say_status :done, :build
@@ -86,9 +89,9 @@ endcommand
 
 help   "Generate changelog and append old changelog"
 action :changelog do
-  run "git changelog --save"
+  system "git changelog --save"
   # append older changelog (prior to switching to git-changelog)
-  run "cat .changelog.old.md >> CHANGELOG.md"
+  system "cat .changelog.old.md >> CHANGELOG.md"
 end
 
 require_relative 'debug.rb' if File.exist? 'debug.rb'
