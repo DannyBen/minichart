@@ -1,6 +1,12 @@
 module SpecMixin
+  def load_yaml(path)
+    YAML.load_file path, aliases: true
+  rescue ArgumentError
+    YAML.load_file path
+  end
+
   def spec_from_yaml(set)
-    examples = YAML.load_file("spec/minichart/examples.yml")['examples'][set]
+    examples = load_yaml("spec/minichart/examples.yml")['examples'][set]
     
     examples.each do |name, config|
       approval_file = "#{set}/#{name}.svg"
