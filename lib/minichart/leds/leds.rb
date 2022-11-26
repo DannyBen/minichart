@@ -3,12 +3,12 @@ module Minichart
   class Leds < Base
     class << self
       def leds_defaults
-        @meter_defaults ||= {
+        @leds_defaults ||= {
           positive_color: '#6f6',
           negative_color: '#f66',
-          neutral_color: '#eee',
-          min_opacity: 1,
-          padding: 2,
+          neutral_color:  '#eee',
+          min_opacity:    1,
+          padding:        2,
         }
       end
     end
@@ -17,8 +17,9 @@ module Minichart
 
     # Returns opacity level for a given value
     def opacity(value)
-      return 1 if !value or value == 0
-      value.abs * ((1 - options[:min_opacity]) / max) + options[:min_opacity]
+      return 1 if !value || value.zero?
+
+      (value.abs * ((1 - options[:min_opacity]) / max)) + options[:min_opacity]
     end
 
     # Returns the absolute highest or loest value.
@@ -26,6 +27,5 @@ module Minichart
     def max
       @max ||= [data.compact.max, data.compact.min.abs].max.to_f
     end
-
   end
 end

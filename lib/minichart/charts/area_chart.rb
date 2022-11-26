@@ -16,14 +16,13 @@ module Minichart
       result = [first_point]
 
       inverted_points.each do |point|
-        x = options[:width] * point[0] + options[:padding]
-        y = options[:height] * point[1] + options[:padding]
+        x = (options[:width] * point[0]) + options[:padding]
+        y = (options[:height] * point[1]) + options[:padding]
         result << "#{x},#{y}"
       end
 
       result << "#{options[:width] + options[:padding]},#{options[:height] + options[:padding]}"
       result << first_point
-      
 
       result
     end

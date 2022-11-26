@@ -9,7 +9,7 @@ module Minichart
     def build
       draw_bar
       draw_notches if options[:notches]
-      draw_clipping_indicator if options[:clipping_indicator] and clipping?
+      draw_clipping_indicator if options[:clipping_indicator] && clipping?
     end
 
   protected
@@ -26,7 +26,7 @@ module Minichart
     def draw_notches
       options[:notches].each do |notch|
         draw_notch notch
-        draw_notch -notch if mode == :dual and notch != 0
+        draw_notch(-notch) if (mode == :dual) && (notch != 0)
       end
     end
 
@@ -38,7 +38,7 @@ module Minichart
     def draw_clipping_indicator
       draw_vertical_line clamped_value,
         stroke: options[:clipping_indicator_thickness],
-        color: options[:clipping_indicator_color]
+        color:  options[:clipping_indicator_color]
     end
 
     def draw_vertical_line(target_value, color:, stroke:)
@@ -66,7 +66,7 @@ module Minichart
     end
 
     def x_for(target_value)
-      result = target_value.abs / options[:max].to_f * options[:width] + options[:padding]
+      result = (target_value.abs / options[:max].to_f * options[:width]) + options[:padding]
 
       case mode
       when :positive
@@ -74,7 +74,7 @@ module Minichart
       when :negative
         full_width - result
       when :dual
-        target_value / options[:max].to_f * half_width + half_width + options[:padding]
+        (target_value / options[:max].to_f * half_width) + half_width + options[:padding]
       end
     end
   end

@@ -7,12 +7,12 @@ module Minichart
       def master_defaults
         {
           background: 'white',
-          height: 100,
-          width: 300,
-          stroke: 2,
-          style: {},
-          color: '#66f',
-          padding: 10,
+          height:     100,
+          width:      300,
+          stroke:     2,
+          style:      {},
+          color:      '#66f',
+          padding:    10,
         }
       end
 
@@ -42,7 +42,7 @@ module Minichart
 
       element :g, clip_path: "url(##{clip_path_id})" do
         build
-      end      
+      end
     end
 
     def setup_clip_path(id)
@@ -58,15 +58,15 @@ module Minichart
     end
 
     def full_height
-      options[:height] + options[:padding] * 2
+      options[:height] + (options[:padding] * 2)
     end
 
     def full_width
-      options[:width] + options[:padding] * 2
+      options[:width] + (options[:padding] * 2)
     end
 
     def build
-      raise NotImplementedError, "#build is not implemented"
+      raise NotImplementedError, '#build is not implemented'
     end
   end
 end

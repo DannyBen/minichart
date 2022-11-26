@@ -5,11 +5,11 @@ module Minichart
         meter_defaults.merge width: 50, height: 300
       end
     end
-    
+
     def build
       draw_bar
       draw_notches if options[:notches]
-      draw_clipping_indicator if options[:clipping_indicator] and clipping?
+      draw_clipping_indicator if options[:clipping_indicator] && clipping?
     end
 
   protected
@@ -26,7 +26,7 @@ module Minichart
     def draw_notches
       options[:notches].each do |notch|
         draw_notch notch
-        draw_notch -notch if mode == :dual and notch != 0
+        draw_notch(-notch) if (mode == :dual) && (notch != 0)
       end
     end
 
@@ -38,7 +38,7 @@ module Minichart
     def draw_clipping_indicator
       draw_horizontal_line clamped_value,
         stroke: options[:clipping_indicator_thickness],
-        color: options[:clipping_indicator_color]
+        color:  options[:clipping_indicator_color]
     end
 
     def draw_horizontal_line(target_value, color:, stroke:)
@@ -66,7 +66,7 @@ module Minichart
     end
 
     def y_for(target_value)
-      result = target_value.abs / options[:max].to_f * options[:height] + options[:padding]
+      result = (target_value.abs / options[:max].to_f * options[:height]) + options[:padding]
 
       case mode
       when :positive
@@ -74,7 +74,7 @@ module Minichart
       when :negative
         result
       when :dual
-        options[:height] - (target_value / options[:max].to_f * half_height + half_height) + options[:padding]
+        options[:height] - ((target_value / options[:max].to_f * half_height) + half_height) + options[:padding]
       end
     end
   end

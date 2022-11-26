@@ -1,23 +1,22 @@
 module Minichart
   # Base class for charts with a single value
   class Meter < Base
-
     class << self
       def meter_defaults
         @meter_defaults ||= {
-          max: 100,
-          notches: [],
-          notch_thickness: 4,
-          notch_color: 'black',
-          clipping_indicator: false,
+          max:                          100,
+          notches:                      [],
+          notch_thickness:              4,
+          notch_color:                  'black',
+          clipping_indicator:           false,
           clipping_indicator_thickness: 4,
-          clipping_indicator_color: 'yellow',
-          padding: 2,
+          clipping_indicator_color:     'yellow',
+          padding:                      2,
         }
       end
     end
 
-  protected 
+  protected
 
     def value
       data
@@ -46,19 +45,18 @@ module Minichart
       when :positive
         value.clamp 0, options[:max]
       when :negative
-        value.clamp -options[:max], 0
+        value.clamp(-options[:max], 0)
       when :dual
-        value.clamp -options[:max], options[:max]
+        value.clamp(-options[:max], options[:max])
       end
     end
 
     def style
       {
-        fill: options[:color],
+        fill:         options[:color],
         stroke_width: options[:stroke],
-        stroke: options[:background]
+        stroke:       options[:background],
       }
     end
-
   end
 end

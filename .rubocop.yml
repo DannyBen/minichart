@@ -1,0 +1,29 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+inherit_gem:
+  rentacop:
+    - rentacop.yml
+    - rspec.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  TargetRubyVersion: 2.6
+
+# Allow `include Minichart` in examples
+Style/MixinUsage:
+  Exclude:
+    - 'examples/**/*'
+
+# Allow higher complexity in some cases
+Metrics/AbcSize:
+  Exclude:
+    - lib/minichart/charts/area_chart.rb
+
+# Allow instance variables in specs
+RSpec/InstanceVariable:
+  Enabled: false
