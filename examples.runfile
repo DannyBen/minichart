@@ -1,0 +1,70 @@
+require 'filewatcher'
+
+summary "Generate examples"
+
+usage 'watch [--dev]'
+help 'Watch example files and rerun them on change'
+option '--dev', 'Watch the dev folder instead of the examples folder'
+action :watch do |args|
+  folder = args['--dev'] ? 'dev' : 'examples'
+  glob = "#{folder}/*.rb"
+  
+  say "g`watch`: #{glob}"
+
+  Filewatcher.new(glob).watch do |files|
+    files.each do |filename, event|
+      say "g`#{event}`: #{filename}"
+      next if event == :delete
+
+      Dir.chdir folder do
+        filename = File.basename filename
+        say "g`write`: #{filename}"
+        system "ruby #{filename}"
+      end
+    end
+  end
+end
+
+help 'Regenerate all SVG examples'
+action :build do
+  File.delete *Dir['examples/*.svg']
+  Dir.chdir 'examples' do
+    Dir['*.rb'].each do |filename|
+      say "g`write`: #{filename}"
+      system "ruby #{filename}"
+    end
+  end
+end
+
+help "Generate readme for examples folder"
+action :readme do
+  result = ["# Examples\n"]
+  Dir['examples/*.rb'].each do |file|
+    basename = File.basename file, '.rb'
+    next if basename == "vertical_status_leds"
+
+    say "g`read`: #{file}"
+    
+    title = basename.tr '_', ' '
+    code  = File.read(file).strip
+    if File.exist? "examples/#{basename}.svg"
+      image = "[![#{basename}](#{basename}.svg)](#{file}.svg)"
+    else
+      image = false
+    end
+
+    result.push "## #{title}\n"
+    result.push "```ruby"
+    result.push code
+    result.push "```\n"
+    result.push image if image
+    result.push "\n"
+  end
+
+  result.push "\n---\n"
+  result.push "This file was generated automatically with `run examples readme`."
+
+  result = result.join "\n"
+  File.write 'examples/README.md', result
+  say 'g`write`: examples/README.md'
+end

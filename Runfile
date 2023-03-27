@@ -1,91 +1,9 @@
-require "runfile-tasks"
-require 'filewatcher'
-require 'colsole'
-
-require_relative 'lib/minichart'
-require_relative 'lib/minichart/version'
-
-include Colsole
-
 title   "Minichart Developer Toolbelt"
 summary "Runfile tasks for building the Minichart gem"
-version Minichart::VERSION
 
-RunfileTasks::RubyGems.all 'minichart'
-RunfileTasks::Testing.rspec
-
-command "examples"
-
-usage 'watch [--dev]'
-help 'Watch example files and rerun them on change'
-option '--dev', 'Watch the dev folder instead of the examples folder'
-action :watch do |args|
-  folder = args['--dev'] ? 'dev' : 'examples'
-  glob = "#{folder}/*.rb"
-  
-  say_status :watch, glob
-
-  Filewatcher.new(glob).watch do |filename, event|
-    say_status event, filename
-    next if event == :delete
-
-    Dir.chdir folder do
-      filename = File.basename filename
-      system "ruby #{filename}"
-    end
-  end
-end
-
-help 'Regenerate all SVG examples'
-action :build do
-  say_status :invoke, :build
-  File.delete *Dir['examples/*.svg']
-  Dir.chdir 'examples' do
-    Dir['*.rb'].each do |filename|
-      system "ruby #{filename}"
-    end
-  end
-  say_status :done, :build
-  
-end
-
-help "Generate readme for examples folder"
-action :readme do
-  say_status :invoke, 'examples'
-
-  result = ["# Examples\n"]
-  Dir['examples/*.rb'].each do |file|
-    say_status :process, file
-
-    basename = File.basename file, '.rb'
-
-    next if basename == "vertical_status_leds"
-    
-    title = basename.tr '_', ' '
-    code  = File.read(file).strip
-    if File.exist? "examples/#{basename}.svg"
-      image = "[![#{basename}](#{basename}.svg)](#{file}.svg)"
-    else
-      image = false
-    end
-
-    result.push "## #{title}\n"
-    result.push "```ruby"
-    result.push code
-    result.push "```\n"
-    result.push image if image
-    result.push "\n"
-  end
-
-  result.push "\n---\n"
-  result.push "This file was generated automatically with `run examples readme`."
-
-  result = result.join "\n"
-  File.write 'examples/README.md', result
-  say_status :write, 'examples/README.md'
-end
-
-endcommand
+import_gem 'runfile-tasks/gem'
+import 'examples'
+import 'debug'
 
 help   "Generate changelog and append old changelog"
 action :changelog do
@@ -94,4 +12,4 @@ action :changelog do
   system "cat .changelog.old.md >> CHANGELOG.md"
 end
 
-require_relative 'debug.rb' if File.exist? 'debug.rb'
+
