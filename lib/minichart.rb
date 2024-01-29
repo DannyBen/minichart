@@ -11,5 +11,3 @@ require 'minichart/meters/horizontal_bar_meter'
 require 'minichart/leds/leds'
 require 'minichart/leds/horizontal_status_leds'
 require 'minichart/leds/vertical_status_leds'
-
-require 'byebug' if ENV['BYEBUG']
