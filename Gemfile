@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'byebug'
+gem 'debug'
 gem 'filewatcher'
 gem 'rspec'
 gem 'rspec_approvals'
