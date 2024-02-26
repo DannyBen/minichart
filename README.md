@@ -8,28 +8,6 @@ Create SVG mini charts with Ruby
 
 ---
 
-* [Install](#install)
-* [Usage](#usage)
-* [Chart Types](#chart-types)
-  * [Line Chart](#line-chart)
-  * [Bar Chart](#bar-chart)
-  * [Area Chart](#area-chart)
-  * [Horizontal Bar Meter](#horizontal-bar-meter)
-  * [Vertical Bar Meter](#vertical-bar-meter)
-  * [Horizontal Status Leds](#horizontal-status-leds)
-  * [Vertical Status Leds](#vertical-status-leds)
-* [Configuration](#configuration)
-  * [Class-level default options](#class-level-default-options)
-  * [Instance initialization options](#instance-initialization-options)
-  * [Instance-level options](#instance-level-options)
-* [Options Reference](#options-reference)
-  * [Basic Options](#basic-options)
-  * [Meter Options](#meter-options)
-  * [Leds Options](#leds-options)
-* [Examples](#examples)
-
----
-
 ## Install
 
 ```shell
@@ -224,7 +202,7 @@ chart.options[:background] = 'yellow'
 
 ### Meter Options
 
-Meter charts support these options in additon to the basic options:
+Meter charts support these options in addition to the basic options:
 
 - **mode**: Display mode. Can be `:positive`, `:negative`, `:dual` or `:auto` (default).
   The `:auto` mode will switch between `:positive` and `:negative` based on the
@@ -241,7 +219,7 @@ Meter charts support these options in additon to the basic options:
 
 ### Leds Options
 
-Led charts support these options in additon to the basic options (excluding
+Led charts support these options in addition to the basic options (excluding
 the `color` option):
 
 - **positive_color**: Color to use when the value is greater than 0.

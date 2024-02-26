@@ -23,7 +23,7 @@ module Minichart
     end
 
     # Returns the absolute highest or loest value.
-    # Used to define the availble range of values
+    # Used to define the available range of values
     def max
       @max ||= [data.compact.max, data.compact.min.abs].max.to_f
     end
