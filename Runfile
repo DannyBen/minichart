@@ -4,12 +4,3 @@ summary "Runfile tasks for building the Minichart gem"
 import_gem 'runfile-tasks/gem'
 import 'examples'
 import 'debug'
-
-help   "Generate changelog and append old changelog"
-action :changelog do
-  system "git changelog --save"
-  # append older changelog (prior to switching to git-changelog)
-  system "cat .changelog.old.md >> CHANGELOG.md"
-end
-
-

@@ -1,6 +1,16 @@
 Change Log
 ========================================
 
+Untagged - Latest
+----------------------------------------
+
+- Fix specs for Ruby 3.1/Psych 4
+- Drop support for Ruby < 2.6
+- Drop support for Ruby 2.6
+- Drop support for Ruby 2.x
+
+
+<!-- break v0.3.2 -->
 ## [v0.3.2](https://github.com/DannyBen/minichart/tree/v0.3.2) (2020-06-12)
 
 [Full Changelog](https://github.com/DannyBen/minichart/compare/v0.3.1...v0.3.2)
@@ -84,4 +94,3 @@ Change Log
 **Merged pull requests:**
 
 - Add support for colors [\#1](https://github.com/DannyBen/minichart/pull/1) ([DannyBen](https://github.com/DannyBen))
-
