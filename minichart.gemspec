@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = '>= 3.0'
 
-  s.add_dependency 'victor', '~> 0.3'
+  s.add_dependency 'victor', '~> 0.4'
 
   s.metadata['rubygems_mfa_required'] = 'true'
 end
