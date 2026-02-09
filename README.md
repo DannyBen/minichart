@@ -1,5 +1,7 @@
 # Minichart - SVG Chart Generator
 
+![repocard](https://repocard.dannyben.com/svg/minichart.svg)
+
 ---
 
 Create SVG mini charts with Ruby
