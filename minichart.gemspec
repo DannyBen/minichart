@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.*']
   s.homepage    = 'https://github.com/DannyBen/minichart'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 3.0'
+  s.required_ruby_version = '>= 3.2'
 
-  s.add_dependency 'victor', '~> 0.4'
+  s.add_dependency 'victor', '~> 0.5'
 
   s.metadata['rubygems_mfa_required'] = 'true'
 end
